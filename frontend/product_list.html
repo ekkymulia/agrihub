@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search product</title>
     <link rel="stylesheet" href="style2.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -15,6 +15,9 @@
 
     .icon-hover:hover i {
     color: #F47B20 !important;
+    }
+    .background-nav {
+      background-color: #F47B20;
     }
 </style>
 <body>
@@ -31,31 +34,11 @@
             </a>
           </div>
           <!-- Left elements -->
-  
-          <!-- Right elements -->
-          <div class="col-5 mt-1 justify-content-center">
-            <div class="input-group xsm">
-              <select class="form-select col-3 xsm" aria-label="Filter select">
-                <option selected>Categories</option>
-                <option value="1">Fruit</option>
-                <option value="2">Vegetable</option>
-                <option value="3">Tubbers</option>
-                <option value="4">Spice</option>
-              </select>
-              <input type="text" class="form-control small-input xsm" aria-label="Text input with dropdown button">
-              <div class="input-group-append">
-                <a href="data-produk.html" class="btn btn-outline-secondary xsm"><i class="fa fa-search xsm"></i></a>
-              </div>
-            </div>
-          </div>
-          
-          </div>
-          
-          <!-- Right elements -->
+
+        </div>
         </div>
       </div>
-    </div>
-    <!-- Jumbotron -->
+    </div>   <!-- Jumbotron -->
   
     <!-- Heading -->
     <div class="mb-4 background-nav">
@@ -137,9 +120,6 @@
                 </h2>
                 <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree">
                   <div class="accordion-body">
-                    <div class="range">
-                      <input type="range" class="form-range" id="customRange1" />
-                    </div>
                     <div class="row mb-3">
                       <div class="col-6">
                         <p class="mb-0">
@@ -203,35 +183,23 @@
                   <div class="accordion-body">
                     <!-- Default checkbox -->
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
-                      </label>
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked style="background-color: #F47B20; border: none;" />
+                      <img src="images/rating5.svg" width="50%">
                     </div>
                     <!-- Default checkbox -->
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-secondary"></i>
-                      </label>
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked style="background-color: #F47B20; border: none;" />
+                      <img src="images/rating4.svg" width="50%">
                     </div>
                     <!-- Default checkbox -->
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-secondary"></i>
-                        <i class="fas fa-star text-secondary"></i>
-                      </label>
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked style="background-color: #F47B20; border: none;" />
+                      <img src="images/rating3.svg" width="50%">
                     </div>
                     <!-- Default checkbox -->
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                      <label class="form-check-label" for="flexCheckDefault">
-                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>
-                        <i class="fas fa-star text-secondary"></i>
-                      </label>
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked style="background-color: #F47B20; border: none;" />
+                      <img src="images/rating2.svg" width="50%">
                     </div>
                   </div>
                 </div>
@@ -243,7 +211,7 @@
         <!-- content -->
         <div class="col-lg-9">
           <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
-            <strong class="d-block py-2">32 Items found </strong>
+            <strong class="d-block py-2">5 Items found </strong>
             <div class="ms-auto">
               <select class="form-select d-inline-block w-auto border pt-1">
                 <option value="0">Best match</option>
@@ -251,14 +219,7 @@
                 <option value="2">High rated</option>
                 <option value="3">Randomly</option>
               </select>
-              <div class="btn-group shadow-0 border">
-                <a href="#" class="btn btn-light" title="List view">
-                  <i class="fa fa-bars fa-lg"></i>
-                </a>
-                <a href="#" class="btn btn-light active" title="Grid view">
-                  <i class="fa fa-th fa-lg"></i>
-                </a>
-              </div>
+              
             </div>
           </header>
   
@@ -279,37 +240,26 @@
                     </div>
                     <div class="col-xl-6 col-md-5 col-sm-7">
                       <h4>Orange Pass Farm Bogor</h4>
-                    </div>
-                    <div class="card" style="width: 20%; display: flex; align-items: center;">
-                    <img src="images/profile.svg" class="card-img-top" alt="Image" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Pass Farm Bogor</h5>
-                        <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                            <div class="d-flex flex-row">
-                      <div class="text-warning mb-1 me-2">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span class="ms-1">
-                          4.5
-                        </span>
-                      </div>
-                        <a href="#" class="card-link">See Supplier</a>
-                        <a href="#" class="card-link">See Catalog Supplier</a>
+                      <div class="d-flex align-items-center rating">
+                        <div class="d-flex">
+                        <img src="images/profile.svg" class="card-img-top" alt="Image" style="width: 30px; height: 30px; object-fit: cover; margin-right: 10px;">
+                        <ul class="list-unstyled">
+                          <li><h7 class="card-title">Pass Farm Bogor</h7></li>
+                          <li> <div class="text-warning mb-1 me-2">
+                          </div></li>
+                        </ul>
+                        
+                        </div>
                         </div>
                     </div>
-                    </div>
-
                     <div class="col-xl-3 col-md-3 col-sm-5">
                       <div class="d-flex flex-row align-items-center mb-1">
                         <h4 class="mb-1 me-1">Rp.1.100.000,-</h4>
                       </div>
                       <h6 class="text-success">Already Harvested</h6>
                       <div class="mt-4">
-                        <button class="btn btn-primary shadow-0" type="button">See More</button>
-                      </div>
+                        <button class="btn btn-primary shadow-0" type="button" style="background-color: #F47B20; border: none;">See More</button>
+                      </div>                      
                     </div>
                   </div>
                 </div>
@@ -334,6 +284,16 @@
                     </div>
                     <div class="col-xl-6 col-md-5 col-sm-7">
                       <h4>Fresh Orange from Jawa Barat</h4>
+                      <div class="d-flex align-items-center rating">
+                        <div class="d-flex">
+                        <img src="images/profile1.svg" class="card-img-top" alt="Image" style="width: 30px; height: 30px; object-fit: cover; margin-right: 10px;">
+                        <ul class="list-unstyled">
+                          <li><h7 class="card-title">Jawa barat Farm</h7></li>
+                          <li> <div class="text-warning mb-1 me-2">
+                          </div></li>
+                        </ul>
+                        </div>
+                        </div>
                     </div>
                     <div class="col-xl-3 col-md-3 col-sm-5">
                       <div class="d-flex flex-row align-items-center mb-1">
@@ -341,9 +301,9 @@
                       </div>
                       <h6 class="text-warning">Not yet harvested</h6>
                       <div class="mt-4">
-                        <button class="btn btn-primary shadow-0" type="button">See More</button>
-                        
+                        <button class="btn btn-primary shadow-0" type="button" style="background-color: #F47B20; border: none;">See More</button>
                       </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -368,6 +328,16 @@
                     </div>
                     <div class="col-xl-6 col-md-5 col-sm-7">
                       <h4>Orangetopia Delights</h4>
+                      <div class="d-flex align-items-center rating">
+                        <div class="d-flex">
+                        <img src="images/profile 2.svg" class="card-img-top" alt="Image" style="width: 30px; height: 30px; object-fit: cover; margin-right: 10px;">
+                        <ul class="list-unstyled">
+                          <li><h7 class="card-title">Saung Tani Ciheurang</h7></li>
+                          <li> <div class="text-warning mb-1 me-2">
+                          </div></li>
+                        </ul>
+                        </div>
+                        </div>
                     </div>
                     <div class="col-xl-3 col-md-3 col-sm-5">
                       <div class="d-flex flex-row align-items-center mb-1">
@@ -375,9 +345,9 @@
                       </div>
                       <h6 class="text-success">Already Harvested</h6>
                       <div class="mt-4">
-                        <button class="btn btn-primary shadow-0" type="button">See More</button>
-                        
+                        <button class="btn btn-primary shadow-0" type="button" style="background-color: #F47B20; border: none;">See More</button>
                       </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -402,7 +372,16 @@
                     </div>
                     <div class="col-xl-6 col-md-5 col-sm-7">
                       <h4>Citrus Grove Goodies</h4>
-                    
+                      <div class="d-flex align-items-center rating">
+                        <div class="d-flex">
+                        <img src="images/profile.svg" class="card-img-top" alt="Image" style="width: 30px; height: 30px; object-fit: cover; margin-right: 10px;">
+                        <ul class="list-unstyled">
+                          <li><h7 class="card-title">Pass Farm Bogor</h7></li>
+                          <li> <div class="text-warning mb-1 me-2">
+                          </div></li>
+                        </ul>
+                        </div>
+                        </div>
                     </div>
                     <div class="col-xl-3 col-md-3 col-sm-5">
                       <div class="d-flex flex-row align-items-center mb-1">
@@ -410,9 +389,9 @@
                       </div>
                       <h6 class="text-success">Already Harvested</h6>
                       <div class="mt-4">
-                        <button class="btn btn-primary shadow-0" type="button">See More</button>
-                        
+                        <button class="btn btn-primary shadow-0" type="button" style="background-color: #F47B20; border: none;">See More</button>
                       </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -437,6 +416,16 @@
                     </div>
                     <div class="col-xl-6 col-md-5 col-sm-7">
                       <h4>Citrus Symphony Sweets</h4>
+                      <div class="d-flex align-items-center rating">
+                        <div class="d-flex">
+                        <img src="images/profile1.svg" class="card-img-top" alt="Image" style="width: 30px; height: 30px; object-fit: cover; margin-right: 10px;">
+                        <ul class="list-unstyled">
+                          <li><h7 class="card-title">Jawa barat Farm</h7></li>
+                          <li> <div class="text-warning mb-1 me-2">
+                          </div></li>
+                        </ul>
+                        </div>
+                        </div>
                     </div>
                     <div class="col-xl-3 col-md-3 col-sm-5">
                       <div class="d-flex flex-row align-items-center mb-1">
@@ -444,9 +433,9 @@
                       </div>
                       <h6 class="text-success">Already Harvested</h6>
                       <div class="mt-4">
-                        <button class="btn btn-primary shadow-0" type="button">See More</button>
-                        
+                        <button class="btn btn-primary shadow-0" type="button" style="background-color: #F47B20; border: none;">See More</button>
                       </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -455,28 +444,7 @@
           </div>
   
           <hr />
-  
-          <!-- Pagination -->
-          <nav aria-label="Page navigation example" class="d-flex justify-content-center mt-3">
-            <ul class="pagination">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item"><a class="page-link" href="#">5</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <!-- Pagination -->
+
         </div>
       </div>
     </div>
@@ -548,6 +516,6 @@
   </footer>
   <!-- Footer -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-</body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  </body>
 </html>
