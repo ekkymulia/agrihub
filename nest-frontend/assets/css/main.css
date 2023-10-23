@@ -12417,3 +12417,23 @@ footer .hotline img {
   }
 }
 /*# sourceMappingURL=main.css.map */
+/* Ruang di antara gambar */
+.carausel-3-columns img {
+  margin-right: 10px; /* Atur ruang horizontal */
+  margin-left: 10px;
+}
+
+/* Gaya tombol panah */
+.slick-prev, .slick-next {
+  background-color: #000; /* Ganti dengan warna latar belakang yang Anda inginkan */
+  color: #fff; /* Ganti dengan warna teks yang Anda inginkan */
+  border: none;
+  padding: 10px 15px;
+  margin: 0 10px; /* Atur ruang horizontal antara tombol */
+  cursor: pointer;
+}
+
+/* Gaya tombol panah saat dihover */
+.slick-prev:hover, .slick-next:hover {
+  background-color: #333; /* Ganti dengan warna latar belakang hover yang Anda inginkan */
+}

@@ -15,8 +15,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.svg" />
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/main.css?v=5.6" />
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="assets/css/main.css" href="assets/css/main.css">
+    <script type="team-slider/javascript" src="assets/js/plugins/team-slider.js"></script>
 </head>
-
 <body>
     <header class="header-area header-style-1 header-height-2">
         <div class="mobile-promotion">
@@ -529,7 +531,6 @@
                                 <div class="pl-25">
                                     <h2 class="mb-30">AgriHub Company</h2>
                                     <p class="mb-25">AgriHub Company adalah perusahaan yang berfokus pada inovasi dalam pertanian. Mereka menghubungkan supplier atau vendor pertanian dengan calon pembeli, menciptakan sebuah platform yang mempermudah transaksi. </p>
-                                    
                                     <p class="mb-50">Dengan memanfaatkan teknologi dan pendekatan berkelanjutan, AgriHub meningkatkan efisiensi dalam rantai pasokan pertanian, mengurangi pemborosan, dan berkontribusi dalam pemenuhan kebutuhan pangan global. Tujuan utama mereka adalah mendukung petani dengan memberikan akses ke pasar yang lebih luas, sambil memastikan keberlanjutan lingkungan dan kesejahteraan petani dalam industri pertanian.</p>
                                     <div class="carausel-3-columns-cover position-relative">
                                         <div id="carausel-3-columns-arrows"></div>
@@ -660,33 +661,20 @@
                                 <div class="col-lg-4 mb-lg-0 mb-md-5 mb-sm-5">
                                     <h6 class="mb-5 text-brand">Our Team</h6>
                                     <h1 class="mb-30">Meet Our Expert Team</h1>
-                                    <p class="mb-30">Proin ullamcorper pretium orci. Donec necscele risque leo. Nam massa dolor imperdiet neccon sequata congue idsem. Maecenas malesuada faucibus finibus.</p>
+                                    <p class="mb-30">Our team is dedicated to carrying out tasks with the highest level of professionalism. Each member of our team possesses their own area of expertise, which we synergistically combine to achieve the most optimal outcomes. We are unwavering in our commitment to enhancing the quality of our work and delivering flawless results.</p>
                                     <p class="mb-30">Proin ullamcorper pretium orci. Donec necscele risque leo. Nam massa dolor imperdiet neccon sequata congue idsem. Maecenas malesuada faucibus finibus.</p>
                                     <a href="#" class="btn">View All Members</a>
                                 </div>
                                 <div class="col-lg-8">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6">
+                                    <div class="carausel-3-columns-cover position-relative">
+                                        <div id="carausel-3-columns-arrows">
+                                        <div class="carausel-3-columns" id="team-slider">
                                             <div class="team-card">
-                                                <img src="assets/imgs/page/about-6.png" alt="" />
-                                                <div class="content text-center">
-                                                    <h4 class="mb-5">H. Merinda</h4>
-                                                    <span>CEO & Co-Founder</span>
-                                                    <div class="social-network mt-20">
-                                                        <a href="#"><img src="assets/imgs/theme/icons/icon-facebook-brand.svg" alt="" /></a>
-                                                        <a href="#"><img src="assets/imgs/theme/icons/icon-twitter-brand.svg" alt="" /></a>
-                                                        <a href="#"><img src="assets/imgs/theme/icons/icon-instagram-brand.svg" alt="" /></a>
-                                                        <a href="#"><img src="assets/imgs/theme/icons/icon-youtube-brand.svg" alt="" /></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="team-card">
+                                            <div class="team-member">
                                                 <img src="assets/imgs/page/about-8.png" alt="" />
                                                 <div class="content text-center">
-                                                    <h4 class="mb-5">Dilan Specter</h4>
-                                                    <span>Head Engineer</span>
+                                                    <h4 class="mb-5">Eky Mulia Lasardi</h4>
+                                                    <span>CEO</span>
                                                     <div class="social-network mt-20">
                                                         <a href="#"><img src="assets/imgs/theme/icons/icon-facebook-brand.svg" alt="" /></a>
                                                         <a href="#"><img src="assets/imgs/theme/icons/icon-twitter-brand.svg" alt="" /></a>
@@ -696,8 +684,67 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="team-card">
+                                            <img src="assets/imgs/page/about-6.png" alt="" />
+                                            <div class="content text-center">
+                                                <h4 class="mb-5">Muhammad Naufal Ardhani</h4>
+                                                <span>CTO</span>
+                                                <div class="social-network mt-20">
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook-brand.svg" alt="" /></a>
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter-brand.svg" alt="" /></a>
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram-brand.svg" alt="" /></a>
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-youtube-brand.svg" alt="" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="team-card">
+                                            <img src="assets/imgs/page/about-6.png" alt="" />
+                                            <div class="content text-center">
+                                                <h4 class="mb-5">Syifa Nursaadah</h4>
+                                                <span>COO</span>
+                                                <div class="social-network mt-20">
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook-brand.svg" alt="" /></a>
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter-brand.svg" alt="" /></a>
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram-brand.svg" alt="" /></a>
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-youtube-brand.svg" alt="" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="team-card">
+                                            <img src="assets/imgs/page/about-6.png" alt="" />
+                                            <div class="content text-center">
+                                                <h4 class="mb-5">Marsya Halya Alfrida</h4>
+                                                <span>CFO</span>
+                                                <div class="social-network mt-20">
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook-brand.svg" alt="" /></a>
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter-brand.svg" alt="" /></a>
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram-brand.svg" alt="" /></a>
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-youtube-brand.svg" alt="" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="team-card">
+                                            <img src="assets/imgs/page/about-6.png" alt="" />
+                                            <div class="content text-center">
+                                                <h4 class="mb-5">Mia Putri Yeza</h4>
+                                                <span>CMO</span>
+                                                <div class="social-network mt-20">
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook-brand.svg" alt="" /></a>
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter-brand.svg" alt="" /></a>
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram-brand.svg" alt="" /></a>
+                                                    <a href="#"><img src="assets/imgs/theme/icons/icon-youtube-brand.svg" alt="" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                         </section>
                     </div>
@@ -913,7 +960,16 @@
             }
         }
         </script>
-                      
+        <script>
+            var splide = new Splide( '.splide', {
+  type   : 'loop',
+  perPage: 3,
+  perMove: 1,
+} );
+
+splide.mount();
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>    
 </body>
 
 </html>
