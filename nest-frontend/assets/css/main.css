@@ -1295,7 +1295,7 @@ textarea:focus {
 
 .select2-container--default .select2-selection--single {
   background-color: #fff;
-  border-bottom: 3px solid #414648;
+  border-bottom: 3px solid #3bb77e;
   border-radius: 0;
   border-right: 0;
   height: 50px;
@@ -12394,6 +12394,20 @@ footer .hotline img {
     width: 100%;
     margin-bottom: 15px;
   }
+}
+.card {
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 0%;
+  height: auto;
 }
 
 @media only screen and (min-width: 375px) and (max-width: 667px) {
