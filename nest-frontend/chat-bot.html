@@ -150,6 +150,9 @@
                                     <li>
                                         <a class="active" href="chat-bot.html">Chat Bot AI</a>
                                     </li>
+                                    <li>
+                                        <a href="subscribe.html">Subscribe</a>
+                                    </li>
                                     </li>
                                     <li>
                                         <a href="#">Pages <i class="fi-rs-angle-down"></i></a>
@@ -257,13 +260,19 @@
                         <ul>
                             <li class="hot-deals"><img src="assets/imgs/theme/icons/icon-hot.svg" alt="hot deals" /><a href="shop-grid-left.html">Deals</a></li>
                             <li>
-                                <a class="active" href="index.html">Home </i></a>
+                                <a  href="index.html">Home </i></a>
                             </li>
                             <li>
                                 <a href="shop-grid-left.html">Shop</i></a>
                             </li>
                             <li>
                                 <a href="vendors-grid.html">Vendors</a>
+                            </li>
+                            <li>
+                                <a  class="active" href="chat-bot.html">Chat Bot AI</a>
+                            </li>
+                            <li>
+                                <a href="subscribe.html">Subscribe</a>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="#">Mega menu</a>
@@ -355,65 +364,43 @@
             <div class="container">
                 <div class="breadcrumb">
                     <a href="index.html" rel="nofollow">Home</a>
-                    <span></span> Pages <span></span> My Account
+                    <span></span> Chat Bot AI
                 </div>
             </div>
         </div>
-        <div class="page-content pt-150 pb-150 mt-n20">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <div class="title text-center mb-20">
-                            <h1>Chat Bot</h1>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="chat-box" id="chat-box">
-                                    <!-- Pesan dari bot -->
-                                    <div class="bot-message alert alert-success">
-                                        Halo! Saya adalah Chatbot GPT. Ada yang bisa saya bantu?
-                                    </div>
-            
-                                    <!-- Pesan dari user -->
-                                    <div class="user-message alert alert-secondary text-right">
-                                        Tentu, saya memiliki beberapa pertanyaan.
-                                    </div>
-            
-                                    <!-- Pesan dari bot -->
-                                    <div class="bot-message alert alert-success">
-                                        Silakan ajukan pertanyaan Anda.
-                                    </div>
-            
-                                    <!-- Pesan dari user -->
-                                    <div class="user-message alert alert-secondary text-right">
-                                        Bagaimana cara menginstal aplikasi ini?
-                                    </div>
-            
-                                    <!-- Pesan dari bot -->
-                                    <div class="bot-message alert alert-success">
-                                        Anda dapat menginstal aplikasi dengan mengikuti langkah-langkah berikut: ...
-                                    </div>
-            
-                                    <!-- Pesan dari user -->
-                                    <div class="user-message alert alert-secondary text-right">
-                                        Terima kasih atas bantuan Anda!
-                                    </div>
-                                </div>
-            
-                                <!-- Input untuk pesan user -->
-                                <div class="input-group mt-3">
-                                    <input type="text" class="form-control" placeholder="Ketik pesan Anda...">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button">Kirim</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="chat-container">
+            <div class="chat-header">
+                Chatbot
+            </div>
+            <div class="chat-box">
+                <div class="chat-message user">Saya ingin mencari supplier buah apel dengan kebutuhan sekitar 600-700kg pada bulan november jika bisa, <br>berikan supplier yang sudah memiliki sertifikasi untuk ekspor</div>
+                <div class="chat-message bot">✔ Menganalisa permintaan user
+                   <br> ✔ Mengambil data supplier dari database
+                   <br> ✔ (langkah lainnya) ..</div>
+                <div class="chat-message bot">Menurut data yang ada, kami menemukan supplier Puncak Farm dapat memenuhi permintaan yang anda inginkan, <br>dikarenakan kuota panen yang besar dan masa panen yang mendekati target waktu pembelian anda.
+                    <br>
+                    <br>
+                    <div class="akun-card" style="width: 500px; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 5px #888888; text-align: center; padding: 20px; display: flex; align-items: center;">
+                        <img src="assets/imgs/vendor/vendor-1.png" alt="Foto Profil" style="width: 100px; height: 100px; border-radius: 50%; margin-right: 20px;">
+                        <br>
+                        <div class="info" style="text-align: left;">
+                            <h5 style="font-size: 20px; margin: 0; color: #333;">Pass Farm Bogor</h5>
+                            <img src="assets/imgs/rating/rating5.svg" width="50%">
+                            <ul class="contact-infor text-muted">
+                                <li style="margin-bottom: 0.2px;"><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Bogor</span></li>
+                                <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us:</strong><span> Subscribe to Unlock</span></li>
+                            </ul>       
+                            <br>                                                                     
+                        <a href="vendor-details-1.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
                     </div>
                 </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button id="send-button">Send</button>
             </div>
         </div>
-    </main>
     <footer class="main">
         <section class="newsletter mb-15">
             <div class="container">
@@ -422,8 +409,8 @@
                         <div class="position-relative newsletter-inner">
                             <div class="newsletter-content">
                                 <h2 class="mb-20">
-                                    Stay home & get your daily <br />
-                                    needs from our shop
+                                    Want access to vendor data?  <br />
+                                    Subscribe now!
                                 </h2>
                                 <p class="mb-45">Start You'r Daily Shopping with <span class="text-brand">AgriHub</span></p>
                                 <form class="form-subcriber d-flex">
@@ -432,78 +419,6 @@
                                 </form>
                             </div>
                             <img src="assets/imgs/banner/banner-13.png" alt="newsletter" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="featured section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
-                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
-                            <div class="banner-icon">
-                                <img src="assets/imgs/theme/icons/icon-1.svg" alt="" />
-                            </div>
-                            <div class="banner-text">
-                                <h3 class="icon-box-title">Best prices & offers</h3>
-                                <p>Orders $50 or more</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
-                            <div class="banner-icon">
-                                <img src="assets/imgs/theme/icons/icon-2.svg" alt="" />
-                            </div>
-                            <div class="banner-text">
-                                <h3 class="icon-box-title">Free delivery</h3>
-                                <p>24/7 amazing services</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
-                            <div class="banner-icon">
-                                <img src="assets/imgs/theme/icons/icon-3.svg" alt="" />
-                            </div>
-                            <div class="banner-text">
-                                <h3 class="icon-box-title">Great daily deal</h3>
-                                <p>When you sign up</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
-                            <div class="banner-icon">
-                                <img src="assets/imgs/theme/icons/icon-4.svg" alt="" />
-                            </div>
-                            <div class="banner-text">
-                                <h3 class="icon-box-title">Wide assortment</h3>
-                                <p>Mega Discounts</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
-                            <div class="banner-icon">
-                                <img src="assets/imgs/theme/icons/icon-5.svg" alt="" />
-                            </div>
-                            <div class="banner-text">
-                                <h3 class="icon-box-title">Easy returns</h3>
-                                <p>Within 30 days</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-xl-none">
-                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
-                            <div class="banner-icon">
-                                <img src="assets/imgs/theme/icons/icon-6.svg" alt="" />
-                            </div>
-                            <div class="banner-text">
-                                <h3 class="icon-box-title">Safe delivery</h3>
-                                <p>Within 30 days</p>
-                            </div>
                         </div>
                     </div>
                 </div>
