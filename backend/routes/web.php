@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Public\IndexController;
+use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::prefix('/')->group(function () {
+    
+    Route::get('/admin/dashboard', [DashboardController::class, 'index']);
+
+});
 
 Route::prefix('/')->group(function () {
     
