@@ -11,5 +11,10 @@ class IndexController extends Controller
     public function index(){
         return view('public/index');
     }
+    
+    public function about(){
+        return view('public/about');
+    }
+
 
 }

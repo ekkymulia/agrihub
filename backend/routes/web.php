@@ -24,5 +24,6 @@ Route::prefix('/')->group(function () {
 Route::prefix('/')->group(function () {
     
     Route::get('/', [IndexController::class, 'index']);
+    Route::get('/about', [IndexController::class, 'about']);
 
 });

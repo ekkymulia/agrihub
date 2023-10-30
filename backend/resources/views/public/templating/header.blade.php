@@ -217,7 +217,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="page-about.html">About</a>
+                                    <a href="about">About</a>
                                 </li>
                                 <li>
                                     <a href="shop-grid-right.html">Shop <i class="fi-rs-angle-down"></i></a>
@@ -347,7 +347,7 @@
                                 <li>
                                     <a href="#">Pages <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="page-about.html">About Us</a></li>
+                                        <li><a href="about">About Us</a></li>
                                         <li><a href="page-contact.html">Contact</a></li>
                                         <li><a href="page-account.html">My Account</a></li>
                                         <li><a href="page-login.html">Login</a></li>
@@ -568,7 +568,7 @@
                         <li class="menu-item-has-children">
                             <a href="#">Pages</a>
                             <ul class="dropdown">
-                                <li><a href="page-about.html">About Us</a></li>
+                                <li><a href="about">About Us</a></li>
                                 <li><a href="page-contact.html">Contact</a></li>
                                 <li><a href="page-account.html">My Account</a></li>
                                 <li><a href="page-login.html">Login</a></li>
