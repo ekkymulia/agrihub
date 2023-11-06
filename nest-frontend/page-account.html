@@ -441,10 +441,7 @@
                                 <div class="dashboard-menu">
                                     <ul class="nav flex-column" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link" id="account-detail-tab" data-bs-toggle="tab" href="#account-detail" role="tab" aria-controls="account-detail" aria-selected="true"><i class="fi-rs-user mr-10"></i>Account details</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="address-tab" data-bs-toggle="tab" href="#address" role="tab" aria-controls="address" aria-selected="true"><i class="fi-rs-marker mr-10"></i>My Address</a>
+                                            <a class="nav-link" id="account-detail-tab" data-bs-toggle="tab" href="#account-detail" role="tab" aria-controls="account-detail" aria-selected="true"><i class="fi-rs-settings-sliders mr-10"></i>Account Details</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="page-login.html"><i class="fi-rs-sign-out mr-10"></i>Logout</a>
@@ -456,50 +453,28 @@
                                 <div class="tab-content account dashboard-content pl-50">
                                     <div class="tab-pane fade" id="account-detail" role="tabpanel" aria-labelledby="account-detail-tab">
                                         <div class="card">
-                                            <div class="card-header">
+                                            <div class="card-header" style="text-align: center;">
                                                 <h4>Account Details</h4>
                                             </div>
-                                            <div class="card-body">
-                                                <img src="assets/imgs/blog/author-3.png" alt="Gambar Card" style="width: 200px; border-radius: 50%;">
-                                                <br>
-                                                <br>
-                                                <p>Already have an account? <a href="page-login.html">Log in instead!</a></p>
-                                                <br>
-                                                <form method="post" name="enq">
-                                                    <div class="row">
-                                                        <div class="form-group col-md-6">
-                                                            <label>First Name <span class="required">*</span></label>
-                                                            <input required="" class="form-control" name="name" type="text" />
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label>Last Name <span class="required">*</span></label>
-                                                            <input required="" class="form-control" name="phone" />
-                                                        </div>
-                                                        <div class="form-group col-md-12">
-                                                            <label>Display Name <span class="required">*</span></label>
-                                                            <input required="" class="form-control" name="dname" type="text" />
-                                                        </div>
-                                                        <div class="form-group col-md-12">
-                                                            <label>Email Address <span class="required">*</span></label>
-                                                            <input required="" class="form-control" name="email" type="email" />
-                                                        </div>
-                                                        <div class="form-group col-md-12">
-                                                            <label>Current Password <span class="required">*</span></label>
-                                                            <input required="" class="form-control" name="password" type="password" />
-                                                        </div>
-                                                        <div class="form-group col-md-12">
-                                                            <label>New Password <span class="required">*</span></label>
-                                                            <input required="" class="form-control" name="npassword" type="password" />
-                                                        </div>
-                                                        <div class="form-group col-md-12">
-                                                            <label>Confirm Password <span class="required">*</span></label>
-                                                            <input required="" class="form-control" name="cpassword" type="password" />
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <button type="submit" class="btn btn-fill-out submit font-weight-bold" name="submit" value="Submit">Save Change</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
+                                            <div class="card-body" >
+                                                <div style="text-align: end; margin-top: 30px;">
+                                                    <h6 style="margin-left: 150px; margin-top: 4px;">Username</h6>
+                                                    <h6 style="margin-left: 150px; margin-top: 9px;">Email</h6>
+                                                    <h6 style="margin-left: 150px; margin-top: 9px;">No.Handphone</h6>
+                                                    <h6 style="margin-left: 150px; margin-top: 9px;">Type Account</h6>
+                                                    <button style="background-color: #35B77E; color: white; margin-bottom: 10px; margin-left: 150px; margin-top: 25px;">Save Data</button>
+                                                </div>
+                                                <div style="margin-top: 30px;">
+                                                    <p style="margin-left: 20px;">marsyahalya<span style="color: #35B77E; text-decoration: underline; margin-left: 3px;">Edit</span></p>
+                                                    <p style="margin-left: 20px;">marsyahalya@apps.ipb.ac.id</p>
+                                                    <p style="margin-left: 20px;">085793458117</p>
+                                                    <p style="margin-left: 20px;">Buyer<span style="color: #35B77E; text-decoration: underline; margin-left: 3px; ">Edit</span></p>
+                                                </div>
+                                                <div style="text-align: center; margin-left: 150px;">
+                                                    <img src="assets/imgs/blog/author-3-01.png" alt="Gambar Card" style="width: 100px; border-radius: 50%; display: inline-block; margin-bottom: 10px; "> <br>
+                                                    <button style="background-color: #35B77E; color: white; margin-bottom: 10px;">Tambah Gambar</button>
+                                                    <p style="margin-bottom: 20px;">Image size: max. 1 MB<br>Image formats: .JPEG, .PNG</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -650,7 +625,6 @@
                 <div class="col-xl-4 col-lg-6 col-md-6">
                     <p class="font-sm mb-0">&copy; 2023, <strong class="text-brand">AgriHub</strong></p>
                 </div>
-                
             </div>
         </div>
     </footer>

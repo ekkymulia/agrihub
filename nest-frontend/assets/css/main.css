@@ -725,6 +725,10 @@ body {
   font-weight: 400;
 }
 
+.card-body {
+  display: flex;
+  }
+
 h1,
 h2,
 h3,
