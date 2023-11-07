@@ -1,5 +1,5 @@
 @extends('public.templating.layouts')
-@section('title', 'Agrihub - About')
+@section('title', 'Agrihub - Contact')
 @section('content')
     <main class="main pages">
         <div class="page-header breadcrumb-wrap">

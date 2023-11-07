@@ -24,6 +24,11 @@ Route::prefix('/')->group(function () {
 Route::prefix('/')->group(function () {
     
     Route::get('/', [IndexController::class, 'index']);
-    Route::get('/about', [IndexController::class, 'about']);
-
+    Route::get('/shop', [IndexController::class, 'shop']);
+    Route::get('/vendors', [IndexController::class, 'vendors']);
+    Route::get('/chatbot', [IndexController::class, 'chatbot']);
+    Route::get('/contact', [IndexController::class, 'contact']);
+    
+    Route::get('/register', [IndexController::class, 'register']);
+    Route::get('/login', [IndexController::class, 'login']);
 });

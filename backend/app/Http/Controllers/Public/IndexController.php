@@ -12,8 +12,29 @@ class IndexController extends Controller
         return view('public/index');
     }
     
-    public function about(){
-        return view('public/about');
+    public function contact(){
+        return view('public/contact');
+    }
+
+    public function shop(){
+        return view('public/shop');
+    }
+
+    public function vendors(){
+        return view('public/vendors');
+    }
+
+    public function chatbot(){
+        return view('public/chatbot');
+    }
+
+    public function register(){
+        // assets gambar di sebelah kiri form blm ada.
+        return view('public/register'); 
+    }
+
+    public function login(){
+        return view('public/login');
     }
 
 
