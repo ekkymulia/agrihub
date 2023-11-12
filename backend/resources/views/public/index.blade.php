@@ -1,4 +1,4 @@
-﻿@extends('public.templating.layouts')
+﻿@extends('public.templating.indexlayouts')
 @section('title', 'Agrihub - Menghubungkan Supplier dan Buyer Pertanian')
 @section('content')
 <main class="main">

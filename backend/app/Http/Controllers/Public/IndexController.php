@@ -12,6 +12,10 @@ class IndexController extends Controller
         return view('public/index');
     }
     
+    public function deals(){
+        return view('public/deals');
+    }
+
     public function contact(){
         return view('public/contact');
     }
@@ -26,6 +30,10 @@ class IndexController extends Controller
 
     public function chatbot(){
         return view('public/chatbot');
+    }
+
+    public function subscribe(){
+        return view('public/subscribe');
     }
 
     public function register(){
