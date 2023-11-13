@@ -42,7 +42,7 @@
                                     <span class="text-brand">a specific <br> product?<br />
                                         </span>
                                 </h2>
-                                <a href="chat-bot.html" class="btn btn-xs">Chat Bot AI <i class="fi-rs-arrow-small-right"></i></a>
+                                <a href="{{ url('chatbot') }}" class="btn btn-xs">Chat Bot AI <i class="fi-rs-arrow-small-right"></i></a>
                             </div>
                         </div>
                     </div>

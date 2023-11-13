@@ -6,7 +6,7 @@
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="{{ url('/') }}"><img src="{{ asset('assets/imgs/theme/agrihub.svg')}}" alt="logo" /></a>
+                    <a href="{{ url('/') }}"><img src="{{ asset('/assets/imgs/theme/agrihub.svg')}}" alt="logo" /></a>
                 </div>
                 <div class="header-right">
                     <div class="search-style-2">
@@ -108,10 +108,10 @@
                                 </div>
                             </div> -->
                             <div class="header-action-icon-2">
-                                <a href="page-account.html">
+                                <a href="{{ url('/profile') }}">
                                     <img class="svgInject" alt="Nest" src="assets/imgs/theme/icons/icon-user.svg" />
                                 </a>
-                                <a href="page-account.html"><span class="lable ml-0">Account</span></a>
+                                <a href="{{ url('/profile') }}"><span class="lable ml-0">Account</span></a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                     <ul>
                                         <li><a href="page-account.html"><i class="fi fi-rs-user mr-10"></i>My Account</a></li>
@@ -119,7 +119,7 @@
                                         <li><a href="page-account.html"><i class="fi fi-rs-label mr-10"></i>My Voucher</a></li>
                                         <li><a href="shop-wishlist.html"><i class="fi fi-rs-heart mr-10"></i>My Wishlist</a></li>
                                         <li><a href="page-account.html"><i class="fi fi-rs-settings-sliders mr-10"></i>Setting</a></li>
-                                        <li><a href="page-login.html"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a></li>
+                                        <li><a href="{{ url('/login') }}"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
         <div class="container">
             <div class="header-wrap header-space-between position-relative">
                 <div class="logo logo-width-1 d-block d-lg-none">
-                    <a href="{{ url('/') }}"><img src="{{ asset('assets/imgs/theme/agrihub.svg')}}" alt="logo" /></a>
+                    <a href="{{ url('/') }}"><img src="{{ asset('/assets/imgs/theme/agrihub.svg')}}" alt="logo" /></a>
                 </div>
                 <div class="header-nav d-none d-lg-flex">
                     <div class="main-categori-wrap d-none d-lg-block">

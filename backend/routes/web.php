@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Public\IndexController;
+use App\Http\Controllers\Account\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -16,11 +17,11 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::prefix('/')->group(function () {
+// Route::prefix('/')->group(function () {
     
-    Route::get('/admin/dashboard', [DashboardController::class, 'index']);
+//     Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 
-});
+// });
 
 Route::prefix('/')->group(function () {
     
@@ -36,7 +37,10 @@ Route::prefix('/')->group(function () {
     Route::get('/register', [IndexController::class, 'register']);
     Route::get('/login', [IndexController::class, 'login']);
     
-    
+    // USER
+    Route::get('/profile', [ProfileController::class, 'index']);
+
+
     // ADMIN
     Route::get('/admin', [DashboardController::class, 'index']);
 
