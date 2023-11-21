@@ -32,6 +32,10 @@ class CheckRoleAccess
                 return $next($request);
             }
 
+            if($userRole == 1){
+                return $next($request);
+            }
+
             // if($userRole == 2){
             //     return $next($request);
             // }

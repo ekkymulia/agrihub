@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -42,7 +44,7 @@ class AuthController extends Controller
 
             if ($user) {
                 // user record found
-                $request->session()->forget(['user_id', 'user_name']); 
+                $request->session()->forget('u_data'); 
                 $request->session()->regenerate();
             
                 $request->session()->put('u_data', $user);
@@ -71,5 +73,60 @@ class AuthController extends Controller
         $request->session()->regenerateToken(); 
 
         return redirect()->route('index'); 
+    }
+
+    public function register(Request $request)
+    {
+        try{
+            $validatedData = $request->validate([
+                'name' => 'required',
+                'email' => 'required|email|unique:users',
+                'no_telp' => 'required|numeric|unique:users',
+                'password' => 'required|min:8',
+            ]);
+        }catch(\Exception $e){
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ])->onlyInput('email');
+        }
+
+        try{
+            $user = User::create([
+                'name' => $validatedData['name'],
+                'email' => $validatedData['email'],
+                'no_telp' => $validatedData['no_telp'],
+                'password' => Hash::make($validatedData['password']),
+            ]);
+        }catch(\Exception $e){
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ])->onlyInput('email');
+        }
+        
+        if (Auth::attempt(['email' => $user->email, 'password' => $user->password])) {
+            $request->session()->regenerate();
+
+            $user = Auth::user();
+            Auth::setUser($user);
+
+            if ($user) {
+                // user record found
+                $request->session()->forget('u_data'); 
+                $request->session()->regenerate();
+            
+                $request->session()->put('u_data', $user);
+
+                return redirect()->intended('dashboard');
+
+            } else {
+                // User record not found
+                return back()->withErrors([
+                    'email' => 'user tidak ditemukan.',
+                ])->onlyInput('email');
+            }
+            
+        }
+
+        return redirect()->route('dashboard');
     }
 }

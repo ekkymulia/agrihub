@@ -11,7 +11,14 @@ class DashboardController extends Controller
      * Display a listing of the resource.
      */
     public function index(){
-        return view('private/dashboard');
+
+        $sesi = session('u_data');
+
+        return view('private/dashboard', with([
+            'session_id'=> $sesi->id,
+            'session_name' => $sesi->name
+
+        ]));
     }
 
     /**
