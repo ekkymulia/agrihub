@@ -108,10 +108,10 @@
                                 </div>
                             </div>
                             <div class="header-action-icon-2">
+                                @if(session('u_data'))
                                 <a href="page-account.html">
                                     <img class="svgInject" alt="Nest" src="{{asset('assets/imgs/theme/icons/icon-user.svg')}}" />
                                 </a>
-                                @if(session('u_data'))
                                 <a href="{page-account.html}"><span class="lable ml-0">Account</span></a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                     <ul>
@@ -124,6 +124,9 @@
                                     </ul>
                                 </div>
                                 @else
+                                <a href="{{route('login')}}">
+                                    <img class="svgInject" alt="Nest" src="{{asset('assets/imgs/theme/icons/icon-user.svg')}}" />
+                                </a>
                                 <a href="{{route('login')}}"><span class="lable ml-0">Login</span></a>
                                 @endif
                                 

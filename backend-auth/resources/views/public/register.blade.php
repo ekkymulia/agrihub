@@ -27,10 +27,13 @@
                                         </div>
                                         <form method="post">
                                             <div class="form-group">
-                                                <input type="text" required="" name="email" placeholder="   Username" />
+                                                <input type="text" required="" name="name" placeholder="Name" />
                                             </div>
                                             <div class="form-group">
-                                                <input required="" type="password" name="password" placeholder="Email" />
+                                                <input type="text" required="" name="no_telp" placeholder="No Telp" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input required="" type="text" name="email" placeholder="Email" />
                                             </div>
                                             <div class="form-group">
                                                 <input required="" type="password" name="password" placeholder="Password" />

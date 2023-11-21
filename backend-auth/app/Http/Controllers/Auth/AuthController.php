@@ -26,6 +26,21 @@ class AuthController extends Controller
 
         return view('public/login');
     }
+    
+    public function index_register(Request $request)
+    {
+        //dia somehow ke otomatis logout, gua juga bingung wkwkw tpi bagus sih
+    
+        //kode dibawah ini hanya pengaman saja
+        Auth::logout();
+    
+        $request->session()->invalidate(); 
+        $request->session()->regenerateToken(); 
+    
+        // redirect ke halaman untuk login
+    
+        return view('public/register');
+    }
 
     public function authenticate(Request $request): RedirectResponse
     {
