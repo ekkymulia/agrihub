@@ -40,6 +40,17 @@
                     <!-- </li> -->
                     <li class="menu-item has-submenu">
                         <a class="menu-link" href="page-sellers-cards.html">
+                            <i class="icon material-icons md-subscriptions"></i>
+                            <span class="text">Subscribers</span>
+                        </a>
+                        <div class="submenu">
+                            <a href="page-sellers-cards.html">Add Subscriber</a>
+                            <a href="page-sellers-list.html">List Subsriber</a>
+                            <!-- <a href="page-seller-detail.html">Seller profile</a> -->
+                        </div>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a class="menu-link" href="page-sellers-cards.html">
                             <i class="icon material-icons md-store"></i>
                             <span class="text">Sellers</span>
                         </a>

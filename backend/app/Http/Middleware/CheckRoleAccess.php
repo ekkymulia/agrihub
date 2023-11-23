@@ -22,7 +22,7 @@ class CheckRoleAccess
 
         if ($user) {
             $routeName = Route::currentRouteName();
-            $userRole = session('u_data')->role_id;
+            $userRole = session('u_data')->tipe_akun_id;
 
             // Note buat Backend Dev:
             // Tambahkan lebih banyak auth logic nanti dibawah sini, sesuai kebutuhan
@@ -39,10 +39,6 @@ class CheckRoleAccess
             if($userRole == 1){
                 return $next($request);
             }
-
-            // if($userRole == 2){
-            //     return $next($request);
-            // }
 
         }else{
             return redirect()->route('logout');

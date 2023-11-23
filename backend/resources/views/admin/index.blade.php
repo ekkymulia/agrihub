@@ -42,7 +42,7 @@
                     <span class="icon icon-sm rounded-circle bg-warning-light"><i class="text-warning material-icons md-qr_code"></i></span>
                     <div class="text">
                         <h6 class="mb-1 card-title">Products</h6>
-                        <span>9.856</span>
+                        <span>{{count($data)}}</span>
                         <span class="text-sm"> In 19 Categories </span>
                     </div>
                 </article>
@@ -221,7 +221,7 @@
     </div>
     <div class="card mb-4">
         <header class="card-header">
-            <h4 class="card-title">Latest orders</h4>
+            <h4 class="card-title">Latest subsribers</h4>
             <div class="row align-items-center">
                 <div class="col-md-3 col-12 me-auto mb-md-0 mb-3">
                     <div class="custom_select">

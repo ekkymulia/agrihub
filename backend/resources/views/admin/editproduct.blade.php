@@ -1,13 +1,13 @@
 @extends('admin.templating.layouts')
-@section('title', 'Agrihub Admin - Add Product')
+@section('title', 'Agrihub Admin - Edit Product')
 @section('content')
 <section class="content-main">
-    <form action="{{route('add_product')}}" enctype="multipart/form-data" method="post">
+    <form action="{{route('edit_product')}}" enctype="multipart/form-data" method="post">
         @csrf
         <div class="row">
             <div class="col-9">
                 <div class="content-header">
-                    <h2 class="content-title">Add New Product</h2>
+                    <h2 class="content-title">Edit Product</h2>
                     <div>
                         <button type="submit" class="btn btn-light rounded font-sm mr-5 text-body hover-up">Save to draft</button>
                         <button type="submit" class="btn btn-md rounded font-sm hover-up">Publish</button>
@@ -17,21 +17,23 @@
             <div class="col-lg-6">
                 <div class="card mb-4">
                     <div class="card-body">
+                        <input value="{{$data->_id}}" name="id" hidden>
                         <div class="mb-4">
                             <label for="product_title" class="form-label">Name</label>
-                            <input type="text" name="nama" placeholder="Type here" class="form-control" id="product_title" required />
+                            <input type="text" name="nama" value="{{$data->nama}}" class="form-control" id="product_title" required />
                         </div>
                         <div class="mb-4">
                             <label class="form-label">Description</label>
-                            <textarea name="deskripsi" placeholder="Type here" class="form-control" rows="4" required></textarea>
+                            <textarea name="deskripsi" placeholder="{{$data->deskripsi}}" class="form-control" rows="4" required>{{$data->deskripsi}}</textarea>
                         </div>
                         <div class="mb-4">
                             <label for="product_image" class="form-label">Image</label>
-                            <input type="file" name="gambar" class="form-control" id="product_image" accept="image/*" required/>
+                            <img src="{{$data->url_gambar}}">
+                            <input type="file" name="gambar" class="form-control" id="product_image" accept="image/*" />
                         </div>
                         <div class="mb-4">
                             <label class="form-label">Price</label>
-                            <input type="number" name="harga" placeholder="Type here" class="form-control" required />
+                            <input type="number" name="harga" value="{{$data->harga}}" class="form-control" required />
                         </div>
                     </div>
                 </div>
@@ -49,7 +51,7 @@
                             </select>
                         </div>
                         <div class="mb-4">
-                            <label class="form-label">Tags</label>
+                            <label class="form-label">Selected Tags <a href="">({{ucfirst($data->kategori)}})</a></label>
                             <select name="kategori" class="form-select" required>
                                 <option value="fruit">Fruit</option>
                                 <option value="vegetables">Vegetables</option>

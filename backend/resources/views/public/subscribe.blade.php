@@ -1,5 +1,5 @@
 @extends('public.templating.layouts')
-@section('title', 'Agrihub - Contact')
+@section('title', 'Agrihub - Subscribe')
 @section('content')
 <footer class="main">
         <section class="newsletter mb-15">

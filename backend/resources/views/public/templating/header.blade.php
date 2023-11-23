@@ -110,7 +110,7 @@
                             <div class="header-action-icon-2">
                                 @if(session('u_data'))
                                 <a href="{{ route('my-account') }}">
-                                    <img class="svgInject" alt="Nest" src="assets/imgs/theme/icons/icon-user.svg" />
+                                    <img class="svgInject" alt="Nest" src="{{asset('assets/imgs/theme/icons/icon-user.svg')}}" />
                                 </a>
                                 <a href="{{ route('my-account') }}"><span class="lable ml-1">{{session('u_data')->username}}</span></a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">

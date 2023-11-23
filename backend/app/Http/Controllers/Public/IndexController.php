@@ -20,9 +20,13 @@ class IndexController extends Controller
         return view('public/contact');
     }
 
-    public function shop(){
-        return view('public/shop');
-    }
+    // public function shop(){
+    //     return view('public/shop');  // dipindahin ke ProductController.php
+    // }
+
+    // public function product(){
+    //     return view('public/product');
+    // }
 
     public function vendors(){
         return view('public/vendors');
