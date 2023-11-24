@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -29,7 +30,8 @@ class DashboardController extends Controller
         // $this->is_admin();
         $api = "https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/listProduct";
         $data = json_decode(Http::get($api));
-        return view('admin/index', compact('data'));
+        $users = User::count();
+        return view('admin/index', compact('data', 'users'));
     }
 
     public function product_list(){

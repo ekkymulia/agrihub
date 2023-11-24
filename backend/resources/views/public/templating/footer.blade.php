@@ -25,25 +25,25 @@
                     <div class="footer-link-widget col">
                         <h4 class="widget-title">Account</h4>
                         <ul class="footer-list mb-sm-5 mb-md-0">
-                            <li><a href="page-login.html">Sign In</a></li>
-                            <li><a href="page-register.html">Registration</li>
-                            <li><a href="page-account.html">Account Detail</a></li>
+                            <li><a href="{{route('login')}}">Sign In</a></li>
+                            <li><a href="{{route('register')}}">Registration</li>
+                            <li><a href=""></a></li>
                         </ul>
                     </div>
                     <div class="footer-link-widget col">
                         <h4 class="widget-title">Corporate</h4>
                         <ul class="footer-list mb-sm-5 mb-md-0">
-                            <li><a href="page-register.html">Become a Vendor</a></li>
-                            <li><a href="subscribe.html">Subscribe</a></li>
+                            <li><a href="">Become a Vendor</a></li>
+                            <li><a href="{{route('subscribe')}}">Subscribe</a></li>
                         </ul>
                     </div>
                     <div class="footer-link-widget col">
                         <h4 class="widget-title">Popular</h4>
                         <ul class="footer-list mb-sm-5 mb-md-0">
-                            <li><a href="#">Fruits</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Tubers</a></li>
-                            <li><a href="#">Spices</a></li>
+                            <li><a href="">Fruits</a></li>
+                            <li><a href="">Vegetables</a></li>
+                            <li><a href="">Tubers</a></li>
+                            <li><a href="">Spices</a></li>
                         </ul>
                     </div>
                     <div class="footer-link-widget widget-install-app col">

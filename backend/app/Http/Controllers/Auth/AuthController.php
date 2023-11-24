@@ -145,34 +145,6 @@ class AuthController extends Controller
     
         $request->session()->put('u_data', $user);
 
-
-
-        // if (Auth::attempt(['email' => $user->email, 'password' => $user->password])) {
-        //     $request->session()->regenerate();
-
-        //     $user = Auth::user();
-        //     dd($user);
-        //     Auth::setUser($user);
-
-        //     if ($user) {
-        //         // user record found
-        //         $request->session()->forget('u_data'); 
-        //         $request->session()->regenerate();
-            
-        //         $request->session()->put('u_data', $user);
-
-        //         return redirect()->intended('dashboard');
-
-        //     } else {
-        //         dd($user);
-        //         // User record not found
-        //         return back()->withErrors([
-        //             'email' => 'user tidak ditemukan.',
-        //         ])->onlyInput('email');
-        //     }
-            
-        // }
-
         return redirect()->intended('/');
 
     }

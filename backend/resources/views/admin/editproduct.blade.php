@@ -9,7 +9,7 @@
                 <div class="content-header">
                     <h2 class="content-title">Edit Product</h2>
                     <div>
-                        <button type="submit" class="btn btn-light rounded font-sm mr-5 text-body hover-up">Save to draft</button>
+                        <a href="{{route('product_list')}}" class="btn btn-light rounded font-sm mr-5 text-body hover-up">Back to list product</a>
                         <button type="submit" class="btn btn-md rounded font-sm hover-up">Publish</button>
                     </div>
                 </div>
@@ -30,6 +30,15 @@
                             <label for="product_image" class="form-label">Image</label>
                             <img src="{{$data->url_gambar}}">
                             <input type="file" name="gambar" class="form-control" id="product_image" accept="image/*" />
+                        </div>
+                        <div class="mb-4">
+                            @if(empty($data->url_sertifikasi))
+                            <label for="certification_image" class="form-label">Product Certification (<a href="">Certs not found!</a>)</label>
+                            @else
+                            <label for="certification_image" class="form-label">Product Certification</label>
+                            <img src="{{$data->url_sertifikasi}}">
+                            @endif
+                            <input type="file" name="sertifikasi" class="form-control" id="product_image" accept="image/*" />
                         </div>
                         <div class="mb-4">
                             <label class="form-label">Price</label>

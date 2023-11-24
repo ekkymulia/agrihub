@@ -37,11 +37,11 @@
                             </div>
                             <div class="col-md-6 col-sm-12 col-xs-12">
                                 <div class="detail-info pr-30 pl-30">
-                                    <span class="stock-status out-stock"> Sale Off </span>
+                                    <span class="stock-status out-stock"> {{$data->kategori}} </span>
                                     <h2 class="title-detail">{{$data->nama}}</h2>
                                     <div class="clearfix product-price-cover">
                                         <div class="product-price primary-color float-left">
-                                            <span class="current-price text-brand">Rp.<?php echo (empty($data->harga) ? '' : formatRupiah($data->harga)); ?></span>
+                                            <span class="current-price text-brand" style="font-size: 30px;">Rp.<?php echo (empty($data->harga) ? '' : formatRupiah($data->harga)); ?></span>
                                             <span>
                                             </span>
                                         </div>
@@ -77,7 +77,7 @@
                             <div class="tab-style3">
                                 <ul class="nav nav-tabs text-uppercase">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="Description-tab" data-bs-toggle="tab" href="#Description">Sertifikation</a>
+                                        <a class="nav-link active" id="Description-tab" data-bs-toggle="tab" href="#Description">Certification</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" id="Additional-info-tab" data-bs-toggle="tab" href="#Additional-info">Estimation Panen</a>
@@ -96,7 +96,12 @@
                                                     </p>
                                                 </div>
                         
-                                                <span style="color: #066F3B;" class="text-bold">Sertifikation Produk :</span> <br>
+                                                <span style="color: #066F3B;" class="text-bold">Product Certification:</span> <br>
+                                                @if(empty($data->url_sertifikasi))
+                                                <p><a href="">Ceritifaction not found!</a></p>
+                                                @else
+                                                <img src="{{$data->url_sertifikasi}}">
+                                                @endif
                                             
                                         </div>
                                     </div>

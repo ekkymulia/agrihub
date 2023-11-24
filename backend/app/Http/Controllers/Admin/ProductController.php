@@ -37,16 +37,26 @@ class ProductController extends Controller
         $deskripsi = $request->input('deskripsi');
         $gambar = $request->file('gambar');
         $kategori = $request->input('kategori');
+        $sertifikasi = $request->file('sertifikasi'); // Tambahkan baris ini untuk mendapatkan file sertifikasi
+
+        // Upload gambar produk
         if ($gambar != null){ 
-            $path = $gambar->store('public/uploads');
-            $url_gambar = asset('storage/uploads/' . basename($path));
-            $response = Http::put("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/editProduct?id=".urlencode($id)."&nama=".urlencode($nama).'&deskripsi='.urlencode($deskripsi).'&harga='.urlencode($harga).'&url_gambar='.urlencode($url_gambar).'&kategori='.urlencode($kategori));
+            $pathGambar = $gambar->store('public/uploads');
+            $url_gambar = asset('storage/uploads/' . basename($pathGambar));
         } else {
-            // jika tidak ada selected gambar maka akan mengambil url_gambar sebelumnya agar tidak berubah
             $url_gambar = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/getProduct?id='.urlencode($id)))[0]->url_gambar;
-            // dd($url_gambar);
-            $response = Http::put("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/editProduct?id=".urlencode($id)."&nama=".urlencode($nama).'&deskripsi='.urlencode($deskripsi).'&harga='.urlencode($harga).'&url_gambar='.urlencode($url_gambar).'&kategori='.urlencode($kategori));
         }
+
+        // Upload sertifikasi
+        if ($sertifikasi != null) {
+            $pathSertifikasi = $sertifikasi->store('public/uploads');
+            $url_sertifikasi = asset('storage/uploads/' . basename($pathSertifikasi));
+        } else {
+            $url_sertifikasi = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/getProduct?id='.urlencode($id)))[0]->url_sertifikasi;
+        }
+        $response = Http::put("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/editProduct?id=".urlencode($id)."&nama=".urlencode($nama).'&deskripsi='.urlencode($deskripsi).'&harga='.urlencode($harga).'&url_gambar='.urlencode($url_gambar).'&kategori='.urlencode($kategori).'&url_sertifikasi='.urlencode($url_sertifikasi)); 
+
+
         
         $data = json_decode($response);
         
