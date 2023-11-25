@@ -3,7 +3,7 @@
 @section('content')
 <section class="content-main">
     <div class="content-header">
-        <h2 class="content-title">Sellers list</h2>
+        <h2 class="content-title">List Account</h2>
         <div>
             <a href="#" class="btn btn-primary"><i class="material-icons md-plus"></i> Create new</a>
         </div>
@@ -37,7 +37,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Seller</th>
+                            <th>User</th>
                             <th>Email</th>
                             <th>Subscribe</th>
                             <th>Registered</th>
