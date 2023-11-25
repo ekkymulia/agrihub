@@ -28,7 +28,7 @@
                                         <form method="post" action="{{route('register')}}">
                                             @csrf
                                             <div class="form-group">
-                                                <input type="text" required="" name="nama" placeholder="Nama Lengkap" />
+                                                <input type="text" required="" name="nama_lengkap" placeholder="Nama Lengkap" />
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" required="" name="username" placeholder="Username" />

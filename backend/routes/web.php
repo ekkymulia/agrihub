@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Account\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Auth\AccountController;
 use App\Http\Controllers\Public\IndexController;
 use GuzzleHttp\Handler\Proxy;
 use Illuminate\Support\Facades\Route;
@@ -29,11 +30,14 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::prefix('/auth')->group(function () {
     Route::get('/login', [AuthController::class, 'index'])->name('login');
-    Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
+    Route::post('/login', [AccountController::class, 'authenticate'])->name('login');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
+    // Route::get('/register', [AuthController::class, 'index_register'])->name('register');
+    // Route::post('/register', [AuthController::class, 'register'])->name('register');
+    
     Route::get('/register', [AuthController::class, 'index_register'])->name('register');
-    Route::post('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/register', [AccountController::class, 'add_user'])->name('register');
 });
 
 Route::prefix('/admin')->group(function () {

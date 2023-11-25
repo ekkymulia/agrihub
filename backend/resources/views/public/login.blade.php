@@ -29,7 +29,7 @@
                                         <form method="post" action="{{route('login')}}">
                                             @csrf
                                             <div class="form-group">
-                                                <input type="text" required="" name="creduser" placeholder="Username or Email *" />
+                                                <input type="text" required="" name="username" placeholder="Username or Email *" />
                                             </div>
                                             <div class="form-group">
                                                 <input required="" type="password" name="password" placeholder="Your password *" />
