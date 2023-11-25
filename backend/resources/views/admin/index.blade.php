@@ -18,7 +18,7 @@
                     <span class="icon icon-sm rounded-circle bg-primary-light"><i class="text-primary material-icons md-person"></i></span>
                     <div class="text">
                         <h6 class="mb-1 card-title">Users</h6>
-                        <span>{{$users}}</span>
+                        <span>{{count($users)}}</span>
                     </div>
                 </article>
             </div>
@@ -29,7 +29,7 @@
                     <span class="icon icon-sm rounded-circle bg-success-light"><i class="text-success material-icons md-subscriptions"></i></span>
                     <div class="text">
                         <h6 class="mb-1 card-title">Subscriptions</h6>
-                        <span>1</span>
+                        <span>{{count($is_subscribe)}}</span>
                     </div>
                 </article>
             </div>
@@ -40,7 +40,7 @@
                     <span class="icon icon-sm rounded-circle bg-warning-light"><i class="text-warning material-icons md-qr_code"></i></span>
                     <div class="text">
                         <h6 class="mb-1 card-title">Products</h6>
-                        <span>{{count($data)}}</span>
+                        <span>{{count($list_product)}}</span>
                     </div>
                 </article>
             </div>

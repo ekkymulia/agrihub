@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
                 'email' => 'naufal@gmail.com',
                 'password' => bcrypt('123456'),
                 'terverifikasi' => 1,
-                'tipe_akun_id' => 1,
+                'role_id' => 1,
             ],
             [
                 'nama' => 'Ekky Mulia',
@@ -32,7 +32,7 @@ class UserSeeder extends Seeder
                 'email' => 'ekky@gmail.com',
                 'password' => bcrypt('123456'),
                 'terverifikasi' => 1,
-                'tipe_akun_id' => 3,
+                'role_id' => 3,
             ],
         ];
 

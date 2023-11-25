@@ -12,9 +12,9 @@ class ProfileController extends Controller
             return redirect()->route('index');
         }
         
-        if(session('u_data')->tipe_akun_id == "1") {
+        if(session('u_data')->role_id == "1") {
             $role = "Member";
-        } elseif(session('u_data')->tipe_akun_id == "3") {
+        } elseif(session('u_data')->role_id == "3") {
             $role = "Admin";
         }
 

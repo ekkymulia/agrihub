@@ -26,7 +26,7 @@
                                             <i class="fi-rs-settings-sliders mr-10"></i>Account Details
                                         </a>
                                     </li>
-                                    @if(session('u_data')->tipe_akun_id == 3)
+                                    @if(session('u_data')->role_id == 3)
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('dashboard')}}">
                                             <i class="fi-rs-admin-alt mr-10"></i>Back to Dashboard
@@ -62,7 +62,7 @@
                                         <div class="text-end mt-2">
                                             <div class="mb-3">
                                                 <label for="username" class="form-label">Username</label>
-                                                <input type="text" class="form-control" id="username" value="{{ session('u_data')->nama }}" readonly>
+                                                <input type="text" class="form-control" id="username" value="{{ session('u_data')->nama_lengkap }}" readonly>
                                                 <small><a href="#" class="text-success">Edit</a></small>
                                             </div>
                                             <div class="mb-3">
@@ -71,7 +71,7 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label for="noHp" class="form-label">No.Handphone</label>
-                                                <input type="text" class="form-control" id="noHp" value="{{ session('u_data')->no_hp }}" readonly>
+                                                <input type="text" class="form-control" id="noHp" value="{{ session('u_data')->no_telp }}" readonly>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="typeAccount" class="form-label">Type Account</label>

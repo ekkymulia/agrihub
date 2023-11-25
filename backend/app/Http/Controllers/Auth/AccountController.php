@@ -77,9 +77,15 @@ class AccountController extends Controller
         $user = collect($users)->firstWhere('username', $username);
     
         // Jika pengguna ditemukan dan password sesuai, lakukan otentikasi
-        if ($user && $user['password'] === $password) {
+        if ($user && isset($user['password']) && $user['password'] === $password) {
+            // Hilangkan field yang tidak diperlukan seperti '_id' dan 'password'
+            unset($user['_id'], $user['password']);
+    
+            // Cast array to object
+            $userObject = (object) $user;
+    
             // Simpan informasi pengguna dalam session
-            session(['u_data' => $user]);
+            session(['u_data' => $userObject]);
     
             // Redirect ke halaman yang sesuai
             return redirect()->intended('/');

@@ -65,7 +65,7 @@ class AuthController extends Controller
             
                 $request->session()->put('u_data', $user);
                 
-                if(session('u_data')->tipe_akun_id == 3){
+                if(session('u_data')->role_id == 3){
                     return redirect()->intended('/admin');
                 }
                 
@@ -104,7 +104,7 @@ class AuthController extends Controller
                 'email' => 'required|email|unique:users,id',
                 'no_hp' => 'required|numeric|unique:users,id',
                 'alamat' => 'required',
-                // 'tipe_akun_id' => 'required',
+                // 'role_id' => 'required',
                 'password' => 'required|min:8',
             ]);
         }catch(\Exception $e){
@@ -122,7 +122,7 @@ class AuthController extends Controller
                 'no_hp' => $validatedData['no_hp'],
                 'alamat' => $validatedData['alamat'],
                 'terverifikasi' => 0,
-                'tipe_akun_id' => 1,
+                'role_id' => 1,
                 'password' => Hash::make($validatedData['password']),
             ]);
 

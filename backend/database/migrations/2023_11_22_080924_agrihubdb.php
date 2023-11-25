@@ -20,7 +20,7 @@ return new class extends Migration
             $table->boolean('terverifikasi');
             $table->string('password', 100);
             $table->string('alamat', 100);
-            $table->unsignedBigInteger('tipe_akun_id');
+            $table->unsignedBigInteger('role_id');
             $table->timestamps();
         });
 

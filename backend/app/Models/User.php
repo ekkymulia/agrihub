@@ -25,7 +25,7 @@ class User extends Authenticatable
         'alamat',
         'email',
         'terverifikasi',
-        'tipe_akun_id',
+        'role_id',
         'password',
     ];
 
