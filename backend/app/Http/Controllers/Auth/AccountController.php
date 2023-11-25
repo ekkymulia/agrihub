@@ -10,11 +10,43 @@ use Illuminate\Support\Facades\Session;
 
 class AccountController extends Controller
 {   
+    public function index(Request $request)
+    {
+        //dia somehow ke otomatis logout, gua juga bingung wkwkw tpi bagus sih
+
+        //kode dibawah ini hanya pengaman saja
+        // Auth::logout();
+
+        $request->session()->invalidate(); 
+        $request->session()->regenerateToken(); 
+
+        // redirect ke halaman untuk login
+
+        return view('public/login');
+    }
+
+    public function index_register(Request $request)
+    {
+        //dia somehow ke otomatis logout, gua juga bingung wkwkw tpi bagus sih
+    
+        //kode dibawah ini hanya pengaman saja
+        // Auth::logout();
+    
+        $request->session()->invalidate(); 
+        $request->session()->regenerateToken(); 
+    
+        // redirect ke halaman untuk login
+    
+        return view('public/register');
+    }
+
+
     public function add_user(Request $request) {
         try {
 
             // Mendapatkan nilai dari request
             $username = $request->input('username');
+            $nama_lengkap = $request->input('nama_lengkap');
             $email = $request->input('email');
             $no_telp = $request->input('no_telp');
             $alamat = $request->input('alamat');
@@ -25,6 +57,7 @@ class AccountController extends Controller
 
             // Membuat URL-encoded string
             $encodedUsername = urlencode($username);
+            $encodedNamaLengkap = urlencode($nama_lengkap);
             $encodedEmail = urlencode($email);
             $encodedNoTelp = urlencode($no_telp);
             $encodedAlamat = urlencode($alamat);
@@ -34,7 +67,7 @@ class AccountController extends Controller
             $encodedPassword = urlencode($password);
 
             // Membuat request dengan nilai-nilai yang telah diencode
-            $r = Http::post("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_add?username={$encodedUsername}&email={$encodedEmail}&no_telp={$encodedNoTelp}&alamat={$encodedAlamat}&role_id={$encodedRoleId}&is_subscribe={$encodedIsSubscribe}&is_verified={$encodedIsVerified}&password={$encodedPassword}");
+            $r = Http::post("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_add?username={$encodedUsername}&nama_lengkap={$encodedNamaLengkap}&email={$encodedEmail}&no_telp={$encodedNoTelp}&alamat={$encodedAlamat}&role_id={$encodedRoleId}&is_subscribe={$encodedIsSubscribe}&is_verified={$encodedIsVerified}&password={$encodedPassword}");
 
             if ($r->failed()) {
                 $errorMessage = $r->body();
@@ -46,6 +79,7 @@ class AccountController extends Controller
                 $userData = (object)[
                     'username' => $username,
                     'email' => $email,
+                    'nama_lengkap' => $nama_lengkap,
                     'no_telp' => $no_telp,
                     'alamat' => $alamat,
                     'role_id' => $role_id,
@@ -93,6 +127,16 @@ class AccountController extends Controller
             // Jika username atau password tidak sesuai, kembalikan ke halaman login dengan pesan error
             return redirect()->back()->withErrors(['message' => 'Invalid username or password']);
         }
+    }
+
+    public function logout(Request $request)
+    {
+        // Auth::logout();
+
+        $request->session()->invalidate(); 
+        $request->session()->regenerateToken(); 
+
+        return redirect()->route('index'); 
     }
 
     public function list_product(Request $request){

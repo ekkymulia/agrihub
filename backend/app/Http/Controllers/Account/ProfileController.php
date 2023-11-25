@@ -14,6 +14,8 @@ class ProfileController extends Controller
         
         if(session('u_data')->role_id == "1") {
             $role = "Member";
+        } elseif(session('u_data')->role_id == "2") {
+            $role = "Vendor";
         } elseif(session('u_data')->role_id == "3") {
             $role = "Admin";
         }

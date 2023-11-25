@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Account\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
@@ -29,28 +28,26 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 Route::prefix('/auth')->group(function () {
-    Route::get('/login', [AuthController::class, 'index'])->name('login');
+    Route::get('/login', [AccountController::class, 'index'])->name('login');
     Route::post('/login', [AccountController::class, 'authenticate'])->name('login');
-    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/logout', [AccountController::class, 'logout'])->name('logout');
 
     // Route::get('/register', [AuthController::class, 'index_register'])->name('register');
     // Route::post('/register', [AuthController::class, 'register'])->name('register');
     
-    Route::get('/register', [AuthController::class, 'index_register'])->name('register');
+    Route::get('/register', [AccountController::class, 'index_register'])->name('register');
     Route::post('/register', [AccountController::class, 'add_user'])->name('register');
 });
 
 Route::prefix('/admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/productlist', [DashboardController::class, 'product_list'])->name('product_list');
-
+    Route::get('/list_product', [DashboardController::class, 'product_list'])->name('product_list');
     Route::get('/addproduct', [DashboardController::class, 'add_product'])->name('add_product');
     Route::post('/addproduct', [ProductController::class, 'add_product'])->name('add_product');
-
     Route::get('/edit_product/{id}', [DashboardController::class, 'edit_product'])->name('editproduct');
     Route::post('/editproduct', [ProductController::class, 'edit_product'])->name('edit_product');
-
     Route::get('/deleteproduct/{id}', [ProductController::class, 'delete_product'])->name('delete_product');
+    Route::get('/list_account', [DashboardController::class, 'list_account'])->name('list_account');
 });
 
 Route::prefix('/')->group(function () {

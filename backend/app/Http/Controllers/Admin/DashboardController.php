@@ -49,5 +49,10 @@ class DashboardController extends Controller
         $data = json_decode($response)[0];
         return view('admin/editproduct', compact('data'));
     }
+
+    public function list_account(Request $request){
+        $user_list = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_list'));
+        return view('admin/list_account', compact('user_list'));
+    }
 }
 

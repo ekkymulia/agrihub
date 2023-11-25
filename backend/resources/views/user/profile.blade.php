@@ -75,7 +75,7 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label for="typeAccount" class="form-label">Type Account</label>
-                                                <input type="text" class="form-control" id="typeAccount" value="Buyer" readonly>
+                                                <input type="text" class="form-control" id="typeAccount" value="{{$role}}" readonly>
                                                 <small><a href="#" class="text-success">Edit</a></small>
                                             </div>
                                             <div class="text-center mt-4">
