@@ -4,6 +4,7 @@ use App\Http\Controllers\Account\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Auth\AccountController;
+use App\Http\Controllers\Admin\AccountAdminController;
 use App\Http\Controllers\Public\IndexController;
 use GuzzleHttp\Handler\Proxy;
 use Illuminate\Support\Facades\Route;
@@ -47,7 +48,13 @@ Route::prefix('/admin')->group(function () {
     Route::get('/edit_product/{id}', [DashboardController::class, 'edit_product'])->name('editproduct');
     Route::post('/editproduct', [ProductController::class, 'edit_product'])->name('edit_product');
     Route::get('/deleteproduct/{id}', [ProductController::class, 'delete_product'])->name('delete_product');
+    
     Route::get('/list_account', [DashboardController::class, 'list_account'])->name('list_account');
+    Route::get('/add_account', [DashboardController::class, 'add_account'])->name('add_account');
+    Route::post('/add_account', [AccountAdminController::class, 'add_account'])->name('add_account');
+    Route::get('/edit_account/{id}', [DashboardController::class, 'edit_account'])->name('edit_account');
+    Route::post('/editaccount', [AccountAdminController::class, 'edit_account'])->name('editaccount');
+    Route::get('/delete_account/{id}', [AccountAdminController::class, 'delete_account'])->name('delete_account');
 });
 
 Route::prefix('/')->group(function () {

@@ -50,7 +50,8 @@ class AccountController extends Controller
             $email = $request->input('email');
             $no_telp = $request->input('no_telp');
             $alamat = $request->input('alamat');
-            $role_id = 1;
+            $role_id = $request->input('role_id');;
+            // $role_id = 1;
             $is_subscribe = 0;
             $is_verified = 1;
             $password = $request->input('password');
@@ -91,8 +92,11 @@ class AccountController extends Controller
                 // Simpan data pengguna di sesi
                 Session::put('u_data', $userData);
 
-                // Redirect ke halaman yang diinginkan
-                return redirect()->intended('/');
+                if (session('u_data')->role_id == 3) {
+                    return redirect()->intended('/admin');
+                } else {
+                    return redirect()->intended('/');
+                }
             }
         } catch (\Exception $e) {
             // Handle kesalahan dengan mengembalikan respons dengan pesan kesalahan
@@ -122,7 +126,13 @@ class AccountController extends Controller
             session(['u_data' => $userObject]);
     
             // Redirect ke halaman yang sesuai
-            return redirect()->intended('/');
+            if (session('u_data')->role_id == 3) {
+                return redirect()->intended('/admin');
+            } elseif (session('u_data')->role_id == 2) {
+                return redirect()->intended('/admin');
+            } else {
+                return redirect()->intended('/');
+            }
         } else {
             // Jika username atau password tidak sesuai, kembalikan ke halaman login dengan pesan error
             return redirect()->back()->withErrors(['message' => 'Invalid username or password']);

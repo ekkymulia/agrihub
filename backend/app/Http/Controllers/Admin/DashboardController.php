@@ -18,20 +18,20 @@ class DashboardController extends Controller
     //         return redirect()->route('index');
     //     }
     // }
-    public function index(){
-        if (!session('u_data')){
-            return redirect()->route('index');
-        }
-
-        elseif(session('u_data')->role_id != 3) {
-            return redirect()->route('index');
-        }
-
+    public function index(Request $request){
         // $this->is_admin();
+        // if (!session('u_data')){
+        //     return redirect()->route('index');
+        // }
+
+        // elseif(session('u_data')->role_id != 3) {
+        //     return redirect()->route('index');
+        // }
+    
         $list_product = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/listProduct'));
         $users = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_list'));
         $is_subscribe = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_is_subsribe'));
-        return view('admin/index', compact('list_product', 'users', 'is_subscribe'));
+        return view('admin/index', compact('list_product', 'users', 'is_subscribe', 'request'));
     }
 
     public function product_list(){
@@ -53,6 +53,15 @@ class DashboardController extends Controller
     public function list_account(Request $request){
         $user_list = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_list'));
         return view('admin/list_account', compact('user_list'));
+    }
+
+    public function add_account(){ 
+        return view('admin/add_account');
+    }
+
+    public function edit_account($id){
+        $data = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_get?id='.urlencode($id)))[0];
+        return view('admin/edit_account', compact('data'));
     }
 }
 

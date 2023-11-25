@@ -8,8 +8,6 @@
                 <!-- <p>Lorem ipsum dolor sit amet.</p> -->
             </div>
             <div>
-                <a href="#" class="btn btn-light rounded font-md">Export</a>
-                <a href="#" class="btn btn-light rounded font-md">Import</a>
                 <a href="{{route('add_product')}}" class="btn btn-primary btn-sm rounded">Create new</a>
             </div>
         </div>
