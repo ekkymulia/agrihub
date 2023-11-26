@@ -107,6 +107,17 @@ class ProductController extends Controller
         return view('public/showproduct', compact('data'));
     }
 
+    public function api_show_product($id) {
+        $response = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/getProduct?id='.urlencode($id));
+        $data = json_decode($response)[0];
+    
+        if ($response->successful()) {
+            $data = $response->json();
+            return response()->json($data);
+        } else {
+            return response()->json(['error' => 'Failed to fetch data from the API'], 500);
+        }
+    }
 
 
     public function delete_product($id) {
