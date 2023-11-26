@@ -14,13 +14,27 @@ class ProductController extends Controller
         $deskripsi = $request->input('deskripsi');
         $gambar = $request->file('gambar');
         // buat upload gambar internal di laravel
-        $path = $gambar->store('public/uploads');
-        $url_gambar = asset('storage/uploads/' . basename($path));
+        $path_gambar = $gambar->store('public/uploads');
+        $url_gambar = '/storage/uploads/' . basename($path_gambar);
         // // // // // //
         $kategori = $request->input('kategori');
+        
+        $nama_sertifikasi = $request->input('nama_sertifikasi');
+        $sertifikasi = $request->file('sertifikasi');
+        $path_sertifikasi = $sertifikasi->store('public/uploads');
+        // $url_sertifikasi = asset('storage/uploads/' . basename($path_sertifikasi));
+        $url_sertifikasi = '/storage/uploads/' . basename($path_sertifikasi);
 
-        $url = 'https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/addProduct?nama='.urlencode($nama).'&deskripsi='.urlencode($deskripsi).'&harga='.urlencode($harga).'&url_gambar='.urlencode($url_gambar).'&kategori='.urlencode($kategori);
-        $response = Http::post($url);
+
+        
+        $vendor_id = $request->input('vendor_id');
+        $vendor_nama = $request->input('vendor_nama');
+        $vendor_alamat = $request->input('vendor_alamat');
+        $vendor_no_telp = $request->input('vendor_no_telp');
+
+        $response = Http::post('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/addProduct?nama='.urlencode($nama).'&harga='.urlencode($harga).'&deskripsi='.urlencode($deskripsi).'&url_gambar='.urlencode($url_gambar).'&kategori='.urlencode($kategori).'&url_sertifikasi='.urlencode($url_sertifikasi).'&nama_sertifikasi='.urlencode($nama_sertifikasi).'&vendor_id='.urlencode($vendor_id).'&vendor_nama='.urlencode($vendor_nama).'&vendor_alamat='.urlencode($vendor_alamat).'&vendor_no_telp='.urlencode($vendor_no_telp));
+
+
         if ($response->failed()) {
             $errorMessage = $response->body();
             return $errorMessage;
