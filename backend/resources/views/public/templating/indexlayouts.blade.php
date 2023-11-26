@@ -20,7 +20,7 @@
 <body>
     @include('public.templating.header')
     @yield('content')
-    @include('public.templating.footer')
+    @include('public.templating.indexfooter')
     <!-- Preloader Start -->
     <div id="preloader-active">
     <div class="preloader d-flex align-items-center justify-content-center">
