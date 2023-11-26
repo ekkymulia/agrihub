@@ -26,12 +26,12 @@
                             <textarea name="deskripsi" placeholder="Type here" class="form-control" rows="4" required></textarea>
                         </div>
                         <div class="mb-4">
-                            <label for="product_image" class="form-label">Image</label>
-                            <input type="file" name="gambar" class="form-control" id="product_image" accept="image/*" required/>
-                        </div>
-                        <div class="mb-4">
                             <label class="form-label">Price</label>
                             <input type="number" name="harga" placeholder="Type here" class="form-control" required />
+                        </div>
+                        <div class="mb-4">
+                            <label for="product_image" class="form-label">Image</label>
+                            <input type="file" name="gambar" class="form-control" id="product_image" accept="image/*" required/>
                         </div>
                         <div class="mb-4">
                             <label for="product_image" class="form-label">Certification Name</label>

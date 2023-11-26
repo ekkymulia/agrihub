@@ -2,6 +2,8 @@
 $response = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/listProduct');
 $data = json_decode($response);
 
+$fruits = json_decode(Http::get("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/product_get_by_category?category=fruit"));
+
 function formatRupiah($angka) {
     $rupiah = number_format($angka, 0, ',', '.');
     return $rupiah;
@@ -110,90 +112,15 @@ function formatRupiah($angka) {
                 <!--En tab one-->
                 <div class="tab-pane fade" id="tab-two" role="tabpanel" aria-labelledby="tab-two">
                     <div class="row product-grid-4">
-                        <!--end product card-->
+                        <!-- start product -->
+                        @foreach ($fruits as $fruit)
                         <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
                             <div class="product-cart-wrap mb-30">
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
                                         <a href="shop-product-right.html">
-                                            <img class="default-img" src="assets/imgs/shop/product-12-1.jpg" alt="" />
-                                            <img class="hover-img" src="assets/imgs/shop/product-12-2.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-action-1">
-                                        
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div>
-                                    <div class="product-badges product-badges-position product-badges-mrg">
-                                        <span class="sale">Sale</span>
-                                    </div>
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-left.html">Hodo Foods</a>
-                                    </div>
-                                    <h2><a href="shop-product-right.html">All Natural Italian-Style Chicken Meatballs</a></h2>
-                                    <div>
-                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">Stouffer</a></span>
-                                    </div>
-                                    <div class="product-card-bottom">
-                                        <div class="product-price">
-                                            <span>$52.85</span>
-                                            <span class="old-price">$55.8</span>
-                                        </div>
-                                        <div class="add-cart">
-                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
-                                            <img class="default-img" src="assets/imgs/shop/product-13-1.jpg" alt="" />
-                                            <img class="hover-img" src="assets/imgs/shop/product-13-2.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-action-1">
-                                        
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div>
-                                    <div class="product-badges product-badges-position product-badges-mrg">
-                                        <span class="new">New</span>
-                                    </div>
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-left.html">Snack</a>
-                                    </div>
-                                    <h2><a href="shop-product-right.html">Angie’s Boomchickapop Sweet & Salty Kettle Corn</a></h2>
-                                    <div>
-                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">StarKist</a></span>
-                                    </div>
-                                    <div class="product-card-bottom">
-                                        <div class="product-price">
-                                            <span>$48.85</span>
-                                            <span class="old-price">$52.8</span>
-                                        </div>
-                                        <div class="add-cart">
-                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
-                                            <img class="default-img" src="assets/imgs/shop/product-14-1.jpg" alt="" />
-                                            <img class="hover-img" src="assets/imgs/shop/product-14-2.jpg" alt="" />
+                                            <img class="default-img" src="{{$fruit->url_gambar}}" alt="" />
+                                            <img class="hover-img" src="{{$fruit->url_gambar}}" alt="" />
                                         </a>
                                     </div>
                                     <div class="product-action-1">
@@ -203,11 +130,11 @@ function formatRupiah($angka) {
                                 </div>
                                 <div class="product-content-wrap">
                                     <div class="product-category">
-                                        <a href="shop-grid-left.html">Vegetables</a>
+                                        <a href="shop-grid-left.html">{{$fruit->kategori}}</a>
                                     </div>
-                                    <h2><a href="shop-product-right.html">Foster Farms Takeout Crispy Classic Buffalo Wings</a></h2>
+                                    <h2><a href="shop-product-right.html">{{$fruit->nama}}</a></h2>
                                     <div>
-                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">AgriHubFood</a></span>
+                                        <span class="font-small text-muted">By <a href="{{route('vendor_details',  ['id' => $fruit->vendor_id])}}">{{$fruit->vendor_nama}}</a></span>
                                     </div>
                                     <div class="product-card-bottom">
                                         <div class="product-price">
@@ -220,225 +147,8 @@ function formatRupiah($angka) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
-                                            <img class="default-img" src="assets/imgs/shop/product-15-1.jpg" alt="" />
-                                            <img class="hover-img" src="assets/imgs/shop/product-15-2.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-action-1">
-                                        
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div>
-                                    <div class="product-badges product-badges-position product-badges-mrg">
-                                        <span class="best">-14%</span>
-                                    </div>
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-left.html">Pet Foods</a>
-                                    </div>
-                                    <h2><a href="shop-product-right.html">Blue Diamond Almonds Lightly Salted Vegetables</a></h2>
-                                    <div>
-                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">AgriHubFood</a></span>
-                                    </div>
-                                    <div class="product-card-bottom">
-                                        <div class="product-price">
-                                            <span>$23.85</span>
-                                            <span class="old-price">$25.8</span>
-                                        </div>
-                                        <div class="add-cart">
-                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
-                                            <img class="default-img" src="assets/imgs/shop/product-16-1.jpg" alt="" />
-                                            <img class="hover-img" src="assets/imgs/shop/product-16-2.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-action-1">
-                                        
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-left.html">Hodo Foods</a>
-                                    </div>
-                                    <h2><a href="shop-product-right.html">Chobani Complete Vanilla Greek Yogurt</a></h2>
-                                    <div>
-                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">AgriHubFood</a></span>
-                                    </div>
-                                    <div class="product-card-bottom">
-                                        <div class="product-price">
-                                            <span>$54.85</span>
-                                            <span class="old-price">$55.8</span>
-                                        </div>
-                                        <div class="add-cart">
-                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
-                                            <img class="default-img" src="assets/imgs/shop/product-7-1.jpg" alt="" />
-                                            <img class="hover-img" src="assets/imgs/shop/product-7-2.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-action-1">
-                                        
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-left.html">Meats</a>
-                                    </div>
-                                    <h2><a href="shop-product-right.html">Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g</a></h2>
-                                    <div>
-                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">AgriHubFood</a></span>
-                                    </div>
-                                    <div class="product-card-bottom">
-                                        <div class="product-price">
-                                            <span>$32.85</span>
-                                            <span class="old-price">$33.8</span>
-                                        </div>
-                                        <div class="add-cart">
-                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
-                                            <img class="default-img" src="assets/imgs/shop/product-8-1.jpg" alt="" />
-                                            <img class="hover-img" src="assets/imgs/shop/product-8-2.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-action-1">
-                                        
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div>
-                                    <div class="product-badges product-badges-position product-badges-mrg">
-                                        <span class="sale">Sale</span>
-                                    </div>
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-left.html">Snack</a>
-                                    </div>
-                                    <h2><a href="shop-product-right.html">Encore Seafoods Stuffed Alaskan Salmon</a></h2>
-                                    <div>
-                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">AgriHubFood</a></span>
-                                    </div>
-                                    <div class="product-card-bottom">
-                                        <div class="product-price">
-                                            <span>$35.85</span>
-                                            <span class="old-price">$37.8</span>
-                                        </div>
-                                        <div class="add-cart">
-                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
-                                            <img class="default-img" src="assets/imgs/shop/product-9-1.jpg" alt="" />
-                                            <img class="hover-img" src="assets/imgs/shop/product-9-2.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-action-1">
-                                        
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div>
-                                    <div class="product-badges product-badges-position product-badges-mrg">
-                                        <span class="hot">Hot</span>
-                                    </div>
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-left.html">Coffes</a>
-                                    </div>
-                                    <h2><a href="shop-product-right.html">Gorton’s Beer Battered Fish Fillets with soft paper</a></h2>
-                                    <div>
-                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">Old El Paso</a></span>
-                                    </div>
-                                    <div class="product-card-bottom">
-                                        <div class="product-price">
-                                            <span>$23.85</span>
-                                            <span class="old-price">$25.8</span>
-                                        </div>
-                                        <div class="add-cart">
-                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
-                            <div class="product-cart-wrap">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
-                                            <img class="default-img" src="assets/imgs/shop/product-10-1.jpg" alt="" />
-                                            <img class="hover-img" src="assets/imgs/shop/product-10-2.jpg" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="product-action-1">
-                                        
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-left.html">Cream</a>
-                                    </div>
-                                    <h2><a href="shop-product-right.html">Haagen-Dazs Caramel Cone Ice Cream Ketchup</a></h2>
-                                    <div>
-                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">Tyson</a></span>
-                                    </div>
-                                    <div class="product-card-bottom">
-                                        <div class="product-price">
-                                            <span>$22.85</span>
-                                            <span class="old-price">$24.8</span>
-                                        </div>
-                                        <div class="add-cart">
-                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+                            <!-- end product -->
                         </div>
                         <!--end product card-->
                     </div>

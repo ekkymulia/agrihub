@@ -51,6 +51,7 @@ class ProductController extends Controller
         $deskripsi = $request->input('deskripsi');
         $gambar = $request->file('gambar');
         $kategori = $request->input('kategori');
+        $nama_sertifikasi = $request->input('nama_sertifikasi');
         $sertifikasi = $request->file('sertifikasi'); // Tambahkan baris ini untuk mendapatkan file sertifikasi
 
         // Upload gambar produk
@@ -68,7 +69,13 @@ class ProductController extends Controller
         } else {
             $url_sertifikasi = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/getProduct?id='.urlencode($id)))[0]->url_sertifikasi;
         }
-        $response = Http::put("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/editProduct?id=".urlencode($id)."&nama=".urlencode($nama).'&deskripsi='.urlencode($deskripsi).'&harga='.urlencode($harga).'&url_gambar='.urlencode($url_gambar).'&kategori='.urlencode($kategori).'&url_sertifikasi='.urlencode($url_sertifikasi)); 
+
+        $vendor_id = $request->input('vendor_id');
+        $vendor_nama = $request->input('vendor_nama');
+        $vendor_alamat = $request->input('vendor_alamat');
+        $vendor_no_telp = $request->input('vendor_no_telp');
+
+        $response = Http::put("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/editProduct?id=".urlencode($id)."&nama=".urlencode($nama)."&harga=".urlencode($harga)."&deskripsi=".urlencode($deskripsi)."&url_gambar=".urlencode($url_gambar)."&kategori=".urlencode($kategori)."&url_sertifikasi=".urlencode($url_sertifikasi)."&nama_sertifikasi=".urlencode($nama_sertifikasi)."&vendor_id=".urlencode($vendor_id)."&vendor_nama=".urlencode($vendor_nama)."&vendor_alamat=".urlencode($vendor_alamat)."&vendor_no_telp=".urlencode($vendor_no_telp));
 
 
         

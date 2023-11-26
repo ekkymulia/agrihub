@@ -22,7 +22,15 @@ class IndexController extends Controller
     }
 
     public function vendors(){
-        return view('public/vendors');
+        $users = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_list'));
+        
+        // foreach($users as $user){
+        //     if ($user->role_id == 3){
+                
+        //     }
+        // }
+
+        return view('public/vendors', compact('users'));
     }
 
     public function chatbot(){
@@ -44,11 +52,6 @@ class IndexController extends Controller
 
         $products = json_decode(Http::get("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/listProduct"));
         
-        // $all_product = json_decode(Http::get("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/listProduct"));
-
-        // foreach ($all_product as $products) {
-        //     if ()
-        // }
         return view('public/vendor_details', compact('vendor', 'products'));
     }
 

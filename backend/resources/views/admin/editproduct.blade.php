@@ -18,6 +18,10 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <input value="{{$data->_id}}" name="id" hidden>
+                        <input value="{{$data->vendor_id}}" name="vendor_id" hidden>
+                        <input value="{{$data->vendor_nama}}" name="vendor_nama" hidden>
+                        <input value="{{$data->vendor_alamat}}" name="vendor_alamat" hidden>
+                        <input value="{{$data->vendor_no_telp}}" name="vendor_no_telp" hidden>
                         <div class="mb-4">
                             <label for="product_title" class="form-label">Name</label>
                             <input type="text" name="nama" value="{{$data->nama}}" class="form-control" id="product_title" required />
@@ -27,9 +31,17 @@
                             <textarea name="deskripsi" placeholder="{{$data->deskripsi}}" class="form-control" rows="4" required>{{$data->deskripsi}}</textarea>
                         </div>
                         <div class="mb-4">
+                            <label class="form-label">Price</label>
+                            <input type="number" name="harga" value="{{$data->harga}}" class="form-control" required />
+                        </div>
+                        <div class="mb-4">
                             <label for="product_image" class="form-label">Image</label>
                             <img src="{{$data->url_gambar}}">
                             <input type="file" name="gambar" class="form-control" id="product_image" accept="image/*" />
+                        </div>
+                        <div class="mb-4">
+                            <label for="product_image" class="form-label">Certification Name</label>
+                            <input type="text" name="nama_sertifikasi" placeholder="Type here" value="{{$data->nama_sertifikasi}}" class="form-control" required />
                         </div>
                         <div class="mb-4">
                             @if(empty($data->url_sertifikasi))
@@ -39,10 +51,6 @@
                             <img src="{{$data->url_sertifikasi}}">
                             @endif
                             <input type="file" name="sertifikasi" class="form-control" id="product_image" accept="image/*" />
-                        </div>
-                        <div class="mb-4">
-                            <label class="form-label">Price</label>
-                            <input type="number" name="harga" value="{{$data->harga}}" class="form-control" required />
                         </div>
                     </div>
                 </div>
