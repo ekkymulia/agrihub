@@ -8,6 +8,7 @@
                 </div>
             </div>
             <nav>
+                @if(session('u_data')->role_id == 2)
                 <ul class="menu-aside">
                     <li class="menu-item active">
                         <a class="menu-link" href="{{route('dashboard')}}">
@@ -27,17 +28,26 @@
                             <span class="text">Add product</span>
                         </a>
                     </li>
-                    <!-- <li class="menu-item has-submenu">
-                        <a class="menu-link" href="page-orders-1.html">
-                            <i class="icon material-icons md-shopping_cart"></i>
-                            <span class="text">Orders</span>
+                    @elseif(session('u_data')->role_id == 3)
+                    <ul class="menu-aside">
+                    <li class="menu-item active">
+                        <a class="menu-link" href="{{route('dashboard')}}">
+                            <i class="icon material-icons md-home"></i>
+                            <span class="text">Dashboard</span>
                         </a>
-                        <div class="submenu">
-                            <a href="page-orders-1.html">Order list 1</a>
-                            <a href="page-orders-2.html">Order list 2</a>
-                            <a href="page-orders-detail.html">Order detail</a>
-                        </div> -->
-                    <!-- </li> -->
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{route('product_list')}}">
+                            <i class="icon material-icons md-shopping_bag"></i>
+                            <span class="text">List Products</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{route('add_product')}}">
+                            <i class="icon material-icons md-add_box"></i>
+                            <span class="text">Add product</span>
+                        </a>
+                    </li>
                     <li class="menu-item has-submenu">
                         <a class="menu-link" href="page-sellers-cards.html">
                             <i class="icon material-icons md-subscriptions"></i>
@@ -46,7 +56,6 @@
                         <div class="submenu">
                             <a href="page-sellers-cards.html">Add Subscriber</a>
                             <a href="page-sellers-list.html">List Subsriber</a>
-                            <!-- <a href="page-seller-detail.html">Seller profile</a> -->
                         </div>
                     </li>
                     <li class="menu-item has-submenu">
@@ -60,17 +69,6 @@
                             <a href="page-seller-detail.html">Seller profile</a>
                         </div>
                     </li>
-                    
-                    <!-- <li class="menu-item has-submenu">
-                        <a class="menu-link" href="page-transactions-1.html">
-                            <i class="icon material-icons md-monetization_on"></i>
-                            <span class="text">Transactions</span>
-                        </a>
-                        <div class="submenu">
-                            <a href="page-transactions-1.html">Transaction 1</a>
-                            <a href="page-transactions-2.html">Transaction 2</a>
-                        </div>
-                    </li> -->
                     <li class="menu-item has-submenu">
                         <a class="menu-link" href="#">
                             <i class="icon material-icons md-person"></i>
@@ -78,12 +76,18 @@
                         </a>
                         <div class="submenu">
                             <a href="{{route('list_account')}}">List Account</a>
-                            <a href="#">List Account</a>
+                            <a href="{{route('add_account')}}">Add Account</a>
                             <!-- <a href="page-account-login.html">User login</a> -->
                             <!-- <a href="page-account-register.html">User registration</a> -->
                             <!-- <a href="page-error-404.html">Error 404</a> -->
                         </div>
                     </li>
+                    @else
+                    @php
+                    $request->session()->invalidate(); 
+                    $request->session()->regenerateToken(); 
+                    @endphp
+                    @endif
                     
                    
                     <li class="menu-item">
@@ -91,21 +95,11 @@
                     </li>
                 </ul>
                 <hr />
-                <ul class="menu-aside">
-                    <li class="menu-item has-submenu">
-                        <a class="menu-link" href="#">
-                            <i class="icon material-icons md-settings"></i>
-                            <span class="text">Settings</span>
-                        </a>
-                        <div class="submenu">
-                            <a href="page-settings-1.html">Setting sample 1</a>
-                            <a href="page-settings-2.html">Setting sample 2</a>
-                        </div>
-                    </li>
+                <ul class="menu-aside"> 
                     <li class="menu-item">
-                        <a class="menu-link" href="page-blank.html">
-                            <i class="icon material-icons md-local_offer"></i>
-                            <span class="text"> Starter page </span>
+                        <a class="menu-link" href="{{route('logout')}}">
+                            <i class="icon material-icons md-adjust"></i>
+                            <span class="text"> Logout </span>
                         </a>
                     </li>
                 </ul>

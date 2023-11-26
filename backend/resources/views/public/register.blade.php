@@ -47,11 +47,11 @@
                                             </div>
                                             <div class="payment_option mb-50">
                                                 <div class="custome-radio">
-                                                    <input class="form-check-input" required="" type="radio" name="role_id" id="exampleRadios3" checked="" value="customer" />
+                                                    <input class="form-check-input" required="" type="radio" name="role_id" id="exampleRadios3" checked="" value="1" />
                                                     <label class="form-check-label" for="exampleRadios3" data-bs-toggle="collapse" data-target="#bankTranfer" aria-controls="bankTranfer">I am a customer</label>
                                                 </div>
                                                 <div class="custome-radio">
-                                                    <input class="form-check-input" required="" type="radio" name="role_id" id="exampleRadios4" checked="" value="vendor" />
+                                                    <input class="form-check-input" required="" type="radio" name="role_id" id="exampleRadios4" checked="" value="2" />
                                                     <label class="form-check-label" for="exampleRadios4" data-bs-toggle="collapse" data-target="#checkPayment" aria-controls="checkPayment">I am a vendor</label>
                                                 </div>
                                             </div>

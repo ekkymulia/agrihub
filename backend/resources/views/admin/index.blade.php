@@ -50,32 +50,13 @@
                 <article class="icontext">
                     <span class="icon icon-sm rounded-circle bg-info-light"><i class="text-info material-icons md-shopping_basket"></i></span>
                     <div class="text">
-                        <h6 class="mb-1 card-title">Monthly Earning</h6>
-                        <span>$6,982</span>
-                        <span class="text-sm"> Based in your local time. </span>
+                        <h6 class="mb-1 card-title">Earning</h6>
+                        <span>Rp.4.230.000</span>
                     </div>
                 </article>
             </div>
         </div>
     </div>
-    <!-- <div class="row">
-        <div class="col-xl-8 col-lg-12">
-            <div class="card mb-4">
-                <article class="card-body">
-                    <h5 class="card-title">Sale statistics</h5>
-                    <canvas id="myChart" height="120px"></canvas>
-                </article>
-            </div>
-        </div>
-        <div class="col-xl-4 col-lg-12">
-            <div class="card mb-4">
-                <article class="card-body">
-                    <h5 class="card-title">Revenue Base on Area</h5>
-                    <canvas id="myChart2" height="217"></canvas>
-                </article>
-            </div>
-        </div>
-    </div> -->
     <div class="card mb-4">
         <header class="card-header">
             <h4 class="card-title">Latest subsribers</h4>
@@ -85,7 +66,7 @@
                         <select class="form-select select-nice">
                             <option selected>All Categories</option>
                             <option>Women's Clothing</option>
-                            <option>Men's Clothing</option>
+                            <!-- <option>Men's Clothing</option>
                             <option>Cellphones</option>
                             <option>Computer & Office</option>
                             <option>Consumer Electronics</option>
@@ -93,7 +74,7 @@
                             <option>Home & Garden</option>
                             <option>Luggage & Bags</option>
                             <option>Shoes</option>
-                            <option>Mother & Kids</option>
+                            <option>Mother & Kids</option> -->
                         </select>
                     </div>
                 </div>
@@ -127,7 +108,7 @@
                                 </th>
                                 <th class="align-middle" scope="col">Order ID</th>
                                 <th class="align-middle" scope="col">Billing Name</th>
-                                <th class="align-middle" scope="col">Date</th>
+                                <th class="align-middle" scope="col">Email</th>
                                 <th class="align-middle" scope="col">Total</th>
                                 <th class="align-middle" scope="col">Payment Status</th>
                                 <th class="align-middle" scope="col">Payment Method</th>
@@ -135,6 +116,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($is_subscribe as $row)
                             <tr>
                                 <td class="text-center">
                                     <div class="form-check">
@@ -142,9 +124,9 @@
                                         <label class="form-check-label" for="transactionCheck02"></label>
                                     </div>
                                 </td>
-                                <td><a href="#" class="fw-bold">#SK2540</a></td>
-                                <td>Muhammad Naufal Ardhani</td>
-                                <td>24 November 2024</td>
+                                <td><a href="#" class="fw-bold">{{$row->_id}}</a></td>
+                                <td>{{$row->nama_lengkap}}</td>
+                                <td>{{$row->email}}</td>
                                 <td>Rp.150.000</td>
                                 <td>
                                     <span class="badge badge-pill badge-soft-success">Paid</span>
@@ -154,6 +136,7 @@
                                     <a href="#" class="btn btn-xs"> View details</a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

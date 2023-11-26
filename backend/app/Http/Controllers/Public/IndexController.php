@@ -20,14 +20,6 @@ class IndexController extends Controller
         return view('public/contact');
     }
 
-    // public function shop(){
-    //     return view('public/shop');  // dipindahin ke ProductController.php
-    // }
-
-    // public function product(){
-    //     return view('public/product');
-    // }
-
     public function vendors(){
         return view('public/vendors');
     }
@@ -38,15 +30,6 @@ class IndexController extends Controller
 
     public function subscribe(){
         return view('public/subscribe');
-    }
-
-    public function register(){
-        // assets gambar di sebelah kiri form blm ada.
-        return view('public/register'); 
-    }
-
-    public function login(){
-        return view('public/login');
     }
 
 
