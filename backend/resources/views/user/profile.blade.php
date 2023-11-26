@@ -66,12 +66,17 @@
                                                 <small><a href="#" class="text-success">Edit</a></small>
                                             </div>
                                             <div class="mb-3">
+                                                <label for="username" class="form-label">Alamat</label>
+                                                <input type="text" class="form-control" id="alamat" value="{{ session('u_data')->alamat }}" readonly>
+                                                <small><a href="#" class="text-success">Edit</a></small>
+                                            </div>
+                                            <div class="mb-3">
                                                 <label for="email" class="form-label">Email</label>
                                                 <input type="text" class="form-control" id="email" value="{{ session('u_data')->email }}" readonly>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="noHp" class="form-label">No.Handphone</label>
-                                                <input type="text" class="form-control" id="noHp" value="{{ session('u_data')->no_telp }}" readonly>
+                                                <input type="number" class="form-control" id="noHp" value="{{ session('u_data')->no_telp }}" readonly>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="typeAccount" class="form-label">Type Account</label>
