@@ -33,6 +33,18 @@
                             <label class="form-label">Price</label>
                             <input type="number" name="harga" placeholder="Type here" class="form-control" required />
                         </div>
+                        <div class="mb-4">
+                            <label for="product_image" class="form-label">Certification Name</label>
+                            <input type="text" name="nama_sertifikasi" placeholder="Type here" class="form-control" required />
+                        </div>
+                        <div class="mb-4">
+                            <label for="product_image" class="form-label">Certification</label>
+                            <input type="file" name="sertifikasi" class="form-control" id="product_image" accept="image/*" required/>
+                        </div>
+                        <input type="text" name="vendor_id" placeholder="Type here" value="{{session('u_data')->_id}}" class="form-control" required hidden />
+                        <input type="text" name="vendor_nama" placeholder="Type here" value="{{session('u_data')->nama_lengkap}}" class="form-control" required hidden />
+                        <input type="text" name="vendor_alamat" placeholder="Type here" value="{{session('u_data')->alamat}}" class="form-control" required hidden />
+                        <input type="text" name="vendor_no_telp" placeholder="Type here" value="{{session('u_data')->no_telp}}" class="form-control" required hidden />
                     </div>
                 </div>
             </div>

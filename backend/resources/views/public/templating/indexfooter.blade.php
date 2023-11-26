@@ -91,7 +91,7 @@ function formatRupiah($angka) {
                                     </div>
                                     <h2><a href="shop-product-right.html">{{$row->nama}}</a></h2>
                                     <div>
-                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">Pass Farm bogor</a></span>
+                                        <span class="font-small text-muted">By <a href="{{route('vendor_details', ['id' => $row->vendor_id])}}">{{$row->vendor_nama}}</a></span>
                                     </div>
                                     <div class="product-card-bottom">
                                         <div class="product-price">

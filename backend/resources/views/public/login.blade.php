@@ -29,10 +29,10 @@
                                         <form method="post" action="{{route('login')}}">
                                             @csrf
                                             <div class="form-group">
-                                                <input type="text" required="" name="username" placeholder="Username or Email *" />
+                                                <input type="text" required="" name="username" placeholder="Username" />
                                             </div>
                                             <div class="form-group">
-                                                <input required="" type="password" name="password" placeholder="Your password *" />
+                                                <input required="" type="password" name="password" placeholder="Your password" />
                                             </div>
                                             <div class="login_footer form-group mb-50">
                                                 <div class="chek-form">
@@ -41,7 +41,7 @@
                                                         <label class="form-check-label" for="exampleCheckbox1"><span>Remember me</span></label>
                                                     </div>
                                                 </div>
-                                                <u><a href="page-forgot-password.html" class="text-muted" href="#">Forgot password?</a></u>
+                                                <!-- <u><a href="page-forgot-password.html" class="text-muted" href="#">Forgot password?</a></u> -->
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-heading btn-block hover-up" name="login">Log in</button>

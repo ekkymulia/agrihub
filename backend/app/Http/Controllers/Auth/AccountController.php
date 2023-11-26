@@ -173,7 +173,7 @@ class AccountController extends Controller
         // Jika pengguna ditemukan dan password sesuai, lakukan otentikasi
         if ($user && isset($user['password']) && $user['password'] === $password) {
             // Hilangkan field yang tidak diperlukan seperti '_id' dan 'password'
-            unset($user['_id'], $user['password']);
+            unset($user['password']);
     
             // Cast array to object
             $userObject = (object) $user;

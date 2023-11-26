@@ -68,6 +68,8 @@ Route::prefix('/')->group(function () {
     Route::get('/chatbot', [IndexController::class, 'chatbot'])->name('chatbot');
     Route::get('/subscribe', [IndexController::class, 'subscribe'])->name('subscribe');
     Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
+    Route::get('/vendor_details/{id}', [IndexController::class, 'vendor_details'])->name('vendor_details');
+    
     
     // USER
     Route::get('/my-account', [ProfileController::class, 'index'])->name('my-account');
