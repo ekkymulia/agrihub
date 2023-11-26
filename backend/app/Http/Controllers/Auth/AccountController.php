@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
+use Illuminate\Http\JsonResponse;
+
 
 class AccountController extends Controller
 {   
@@ -100,6 +102,60 @@ class AccountController extends Controller
         }
     }
 
+    public function api_add_user(Request $request)
+    {
+        try {
+            // Retrieve values from the request
+            $username = $request->input('username');
+            $nama_lengkap = $request->input('nama_lengkap');
+            $email = $request->input('email');
+            $no_telp = $request->input('no_telp');
+            $alamat = $request->input('alamat');
+            $role_id = 1;
+            $is_subscribe = 0;
+            $is_verified = 1;
+            $password = $request->input('password');
+
+            // Make the HTTP request with the provided values
+            $response = Http::post("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_add", [
+                'username' => $username,
+                'nama_lengkap' => $nama_lengkap,
+                'email' => $email,
+                'no_telp' => $no_telp,
+                'alamat' => $alamat,
+                'role_id' => $role_id,
+                'is_subscribe' => $is_subscribe,
+                'is_verified' => $is_verified,
+                'password' => $password,
+            ]);
+
+            if ($response->failed()) {
+                $errorMessage = $response->body();
+
+                // Handle the error, for example, by throwing a ValidationException or returning a specific error response
+                return response()->json(['error' => $errorMessage], 400);
+            } else {
+                // Construct user data to return in the response
+                $userData = [
+                    'username' => $username,
+                    'email' => $email,
+                    'nama_lengkap' => $nama_lengkap,
+                    'no_telp' => $no_telp,
+                    'alamat' => $alamat,
+                    'role_id' => $role_id,
+                    'is_subscribe' => $is_subscribe,
+                    'is_verified' => $is_verified,
+                ];
+
+                // Return success response with user data
+                return response()->json(['message' => 'User added successfully', 'user' => $userData], 200);
+            }
+        } catch (\Exception $e) {
+            // Handle errors by returning an error response
+            return response()->json(['error' => 'An error occurred during registration.'], 500);
+        }
+    }
+
     public function authenticate(Request $request) {
         $r = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_list');
         $users = json_decode($r->body(), true);
@@ -128,6 +184,53 @@ class AccountController extends Controller
             return redirect()->back()->withErrors(['message' => 'Invalid username or password']);
         }
     }
+
+    public function authenticateViaApi(Request $request) {
+        try {
+            $response = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_list');
+            if ($response->successful()) {
+                $users = json_decode($response->body(), true);
+
+                $username = $request->input('username');
+                $password = $request->input('password');
+                
+                $user = collect($users)->firstWhere('username', $username);
+
+                
+                if ($user && isset($user['password']) && $user['password'] === $password) {
+                    unset($user['_id'], $user['password']);
+                    
+                    $userObject = (object) $user;
+                    
+                    // Return a JSON response with user data
+                    return new JsonResponse([
+                        'success' => true,
+                        'user' => $userObject,
+                    ]);
+                } else {
+
+                    // Return a JSON response indicating invalid credentials
+                    return new JsonResponse([
+                        'success' => false,
+                        'message' => 'Invalid username or password',
+                    ], 401); // 401 for unauthorized access
+                }
+            } else {
+                // Handle API request failure
+                return new JsonResponse([
+                    'success' => false,
+                    'message' => 'Failed to fetch user data',
+                ], 500); // 500 for internal server error
+            }
+        } catch (\Exception $e) {
+            // Handle any exceptions that may occur during the process
+            return new JsonResponse([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ], 500); // 500 for internal server error
+        }
+    }
+
 
     public function logout(Request $request)
     {
