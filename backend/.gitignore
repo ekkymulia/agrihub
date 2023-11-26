@@ -7,3 +7,15 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+
+$namafile = []
+foreach($request->file('foto') as $foto){
+    $name = $foto->getClientOriginalName();
+    $foto->move(public_path().'/images/', $name);
+    $data[] = $name;
+
+    $namafile[] = $name;
+}
+```
+
+namafile: namafile

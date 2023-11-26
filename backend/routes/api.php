@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Auth\AccountController;
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Http\Request;
@@ -31,3 +33,5 @@ Route::prefix('/auth')->group(function () {
     Route::get('/register', [AuthController::class, 'index_register'])->name('api_register');
     Route::post('/register', [AccountController::class, 'add_user'])->name('api_register');
 });
+
+Route::get('/list-product', [ProductController::class, 'api_product_list'])->name('api_product_list');
