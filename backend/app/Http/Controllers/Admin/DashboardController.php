@@ -28,14 +28,14 @@ class DashboardController extends Controller
         //     return redirect()->route('index');
         // }
     
-        $list_product = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/listProduct'));
-        $users = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_list'));
-        $is_subscribe = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_is_subsribe'));
+        $list_product = json_decode(Http::get(env('MONGO_API').'listProduct'));
+        $users = json_decode(Http::get(env('MONGO_API').'user_list'));
+        $is_subscribe = json_decode(Http::get(env('MONGO_API').'user_is_subsribe'));
         return view('admin/index', compact('list_product', 'users', 'is_subscribe', 'request'));
     }
 
     public function product_list(){
-        $response = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/listProduct');
+        $response = Http::get(env('MONGO_API').'listProduct');
         $data = json_decode($response);
         return view('admin/productlist', compact('data'));
     }
@@ -45,13 +45,13 @@ class DashboardController extends Controller
     }
 
     public function edit_product($id){
-        $response = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/getProduct?id='.urlencode($id));
+        $response = Http::get(env('MONGO_API').'getProduct?id='.urlencode($id));
         $data = json_decode($response)[0];
         return view('admin/editproduct', compact('data'));
     }
 
     public function list_account(Request $request){
-        $user_list = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_list'));
+        $user_list = json_decode(Http::get(env('MONGO_API').'user_list'));
         return view('admin/list_account', compact('user_list'));
     }
 
@@ -60,7 +60,7 @@ class DashboardController extends Controller
     }
 
     public function edit_account($id){
-        $data = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_get?id='.urlencode($id)))[0];
+        $data = json_decode(Http::get(env('MONGO_API').'user_get?id='.urlencode($id)))[0];
         return view('admin/edit_account', compact('data'));
     }
 }

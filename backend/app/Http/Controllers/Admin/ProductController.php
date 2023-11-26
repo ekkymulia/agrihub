@@ -32,7 +32,7 @@ class ProductController extends Controller
         $vendor_alamat = $request->input('vendor_alamat');
         $vendor_no_telp = $request->input('vendor_no_telp');
 
-        $response = Http::post('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/addProduct?nama='.urlencode($nama).'&harga='.urlencode($harga).'&deskripsi='.urlencode($deskripsi).'&url_gambar='.urlencode($url_gambar).'&kategori='.urlencode($kategori).'&url_sertifikasi='.urlencode($url_sertifikasi).'&nama_sertifikasi='.urlencode($nama_sertifikasi).'&vendor_id='.urlencode($vendor_id).'&vendor_nama='.urlencode($vendor_nama).'&vendor_alamat='.urlencode($vendor_alamat).'&vendor_no_telp='.urlencode($vendor_no_telp));
+        $response = Http::post(env('MONGO_API').'addProduct?nama='.urlencode($nama).'&harga='.urlencode($harga).'&deskripsi='.urlencode($deskripsi).'&url_gambar='.urlencode($url_gambar).'&kategori='.urlencode($kategori).'&url_sertifikasi='.urlencode($url_sertifikasi).'&nama_sertifikasi='.urlencode($nama_sertifikasi).'&vendor_id='.urlencode($vendor_id).'&vendor_nama='.urlencode($vendor_nama).'&vendor_alamat='.urlencode($vendor_alamat).'&vendor_no_telp='.urlencode($vendor_no_telp));
 
 
         if ($response->failed()) {
@@ -59,7 +59,7 @@ class ProductController extends Controller
             $pathGambar = $gambar->store('public/uploads');
             $url_gambar = asset('storage/uploads/' . basename($pathGambar));
         } else {
-            $url_gambar = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/getProduct?id='.urlencode($id)))[0]->url_gambar;
+            $url_gambar = json_decode(Http::get(env('MONGO_API').'getProduct?id='.urlencode($id)))[0]->url_gambar;
         }
 
         // Upload sertifikasi
@@ -67,7 +67,7 @@ class ProductController extends Controller
             $pathSertifikasi = $sertifikasi->store('public/uploads');
             $url_sertifikasi = asset('storage/uploads/' . basename($pathSertifikasi));
         } else {
-            $url_sertifikasi = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/getProduct?id='.urlencode($id)))[0]->url_sertifikasi;
+            $url_sertifikasi = json_decode(Http::get(env('MONGO_API').'getProduct?id='.urlencode($id)))[0]->url_sertifikasi;
         }
 
         $vendor_id = $request->input('vendor_id');
@@ -75,10 +75,9 @@ class ProductController extends Controller
         $vendor_alamat = $request->input('vendor_alamat');
         $vendor_no_telp = $request->input('vendor_no_telp');
 
-        $response = Http::put("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/editProduct?id=".urlencode($id)."&nama=".urlencode($nama)."&harga=".urlencode($harga)."&deskripsi=".urlencode($deskripsi)."&url_gambar=".urlencode($url_gambar)."&kategori=".urlencode($kategori)."&url_sertifikasi=".urlencode($url_sertifikasi)."&nama_sertifikasi=".urlencode($nama_sertifikasi)."&vendor_id=".urlencode($vendor_id)."&vendor_nama=".urlencode($vendor_nama)."&vendor_alamat=".urlencode($vendor_alamat)."&vendor_no_telp=".urlencode($vendor_no_telp));
+        $response = Http::put(env('MONGO_API')."editProduct?id=".urlencode($id)."&nama=".urlencode($nama)."&harga=".urlencode($harga)."&deskripsi=".urlencode($deskripsi)."&url_gambar=".urlencode($url_gambar)."&kategori=".urlencode($kategori)."&url_sertifikasi=".urlencode($url_sertifikasi)."&nama_sertifikasi=".urlencode($nama_sertifikasi)."&vendor_id=".urlencode($vendor_id)."&vendor_nama=".urlencode($vendor_nama)."&vendor_alamat=".urlencode($vendor_alamat)."&vendor_no_telp=".urlencode($vendor_no_telp));
 
 
-        
         $data = json_decode($response);
         
         if ($response->failed()) {
@@ -91,14 +90,14 @@ class ProductController extends Controller
     }
 
     public function list_product(Request $request){
-        $response = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/listProduct');
+        $response = Http::get(env('MONGO_API').'listProduct');
         $data = json_decode($response);
 
         return view('public/shop', compact('data'));
     }
 
     public function api_product_list(Request $request){
-        $response = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/listProduct');
+        $response = Http::get(env('MONGO_API').'listProduct');
         
         if ($response->successful()) {
             $data = $response->json();
@@ -109,13 +108,13 @@ class ProductController extends Controller
     }
     
     public function show_product($id) {
-        $response = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/getProduct?id='.urlencode($id));
+        $response = Http::get(env('MONGO_API').'getProduct?id='.urlencode($id));
         $data = json_decode($response)[0];
         return view('public/showproduct', compact('data'));
     }
 
     public function api_show_product($id) {
-        $response = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/getProduct?id='.urlencode($id));
+        $response = Http::get(env('MONGO_API').'getProduct?id='.urlencode($id));
         $data = json_decode($response)[0];
     
         if ($response->successful()) {
@@ -128,7 +127,7 @@ class ProductController extends Controller
 
 
     public function delete_product($id) {
-        $response = Http::delete('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/deleteProduct?id='.urlencode($id));
+        $response = Http::delete(env('MONGO_API').'deleteProduct?id='.urlencode($id));
         if ($response->failed()) {
             $errorMessage = $response->body();
             return $errorMessage; 

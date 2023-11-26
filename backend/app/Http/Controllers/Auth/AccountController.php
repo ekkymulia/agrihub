@@ -161,7 +161,7 @@ class AccountController extends Controller
     }
 
     public function authenticate(Request $request) {
-        $r = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_list');
+        $r = Http::get(env('MONGO_API').'user_list');
         $users = json_decode($r->body(), true);
     
         $username = $request->input('username');
@@ -197,7 +197,7 @@ class AccountController extends Controller
 
     public function authenticateViaApi(Request $request) {
         try {
-            $response = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_list');
+            $response = Http::get(env('MONGO_API').'user_list');
             if ($response->successful()) {
                 $users = json_decode($response->body(), true);
 
@@ -253,7 +253,7 @@ class AccountController extends Controller
     }
 
     public function list_product(Request $request){
-        $r = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_list');
+        $r = Http::get(env('MONGO_API').'user_list');
         $data = json_decode($r);
 
         // return view('public/shop', compact('data'));

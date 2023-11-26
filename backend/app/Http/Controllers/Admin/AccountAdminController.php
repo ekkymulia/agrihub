@@ -81,7 +81,7 @@ class AccountAdminController extends Controller
     }
 
     public function delete_account($id) {
-        $response = Http::delete('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/user_delete?id='.urlencode($id));
+        $response = Http::delete(env('MONGO_API').'user_delete?id='.urlencode($id));
         if ($response->failed()) {
             $errorMessage = $response->body();
             return $errorMessage; 

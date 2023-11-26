@@ -6,7 +6,7 @@
     <div class="page-header breadcrumb-wrap">
         <div class="container">
             <div class="breadcrumb">
-                <a href="index.html" rel="nofollow">Home</a>
+                <a href="{{route('index')}}" rel="nofollow">Home</a>
                 <span></span> Vendors <span></span> {{$vendor->nama_lengkap}}
             </div>
         </div>
@@ -190,16 +190,16 @@
                     <h5 class="section-title style-1 mb-30">Category</h5>
                     <ul>
                         <li>
-                            <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-1.svg" alt="" />Fruits</a><span class="count">30</span>
+                            <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-1.svg" alt="" />Fruits</a><span class="count">1</span>
                         </li>
                         <li>
-                            <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-3.svg" alt="" />Vegetables </a><span class="count">42</span>
+                            <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-3.svg" alt="" />Vegetables </a><span class="count">1</span>
                         </li>
                         <li>
-                            <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-4.svg" alt="" />Tubers</a><span class="count">68</span>
+                            <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-4.svg" alt="" />Tubers</a><span class="count">1</span>
                         </li>
                         <li>
-                            <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-5.svg" alt="" />Spices</a><span class="count">87</span>
+                            <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-5.svg" alt="" />Spices</a><span class="count">1</span>
                         </li>
                     </ul>
                 </div>
