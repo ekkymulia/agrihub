@@ -36,3 +36,4 @@ Route::prefix('/auth')->group(function () {
 
 Route::get('/list-product', [ProductController::class, 'api_product_list'])->name('api_product_list');
 Route::get('/showproduct/{id}', [ProductController::class, 'api_show_product'])->name('api_show_product');
+Route::get('/list-user', [DashboardController::class, 'api_list_account'])->name('api_list_account');
