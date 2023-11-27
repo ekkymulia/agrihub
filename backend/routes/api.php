@@ -29,9 +29,9 @@ Route::prefix('/auth')->group(function () {
 
     // Route::get('/register', [AuthController::class, 'index_register'])->name('register');
     // Route::post('/register', [AuthController::class, 'register'])->name('register');
-    
-    Route::get('/register', [AuthController::class, 'index_register'])->name('api_register');
-    Route::post('/register', [AccountController::class, 'add_user'])->name('api_register');
+    // 
+    // Route::get('/register', [AuthController::class, 'index_register'])->name('api_register');
+    Route::post('/register', [AccountController::class, 'api_add_user'])->name('api_register');
 });
 
 Route::get('/list-product', [ProductController::class, 'api_product_list'])->name('api_product_list');
