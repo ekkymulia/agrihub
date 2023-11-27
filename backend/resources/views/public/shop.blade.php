@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="product-content-wrap">
                                     <div class="product-category">
-                                        <a href="shop-grid-right.html">Fruit</a>
+                                        <a href="shop-grid-right.html">{{$row->kategori}}</a>
                                     </div>
                                     <h2><a href="<?php echo route('show_product', ['id' => $row->_id]) ?>"><?php echo (empty($row->nama) ? '' : $row->nama); ?></a></h2>
                                     <div>

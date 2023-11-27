@@ -22,15 +22,16 @@
     @yield('content')
     @include('public.templating.footer')
     <!-- Preloader Start -->
-    <div id="preloader-active">
-    <div class="preloader d-flex align-items-center justify-content-center">
+    <!-- <div id="preloader-active"> -->
+    <!-- <div id=""> -->
+    <!-- <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-inner position-relative">
             <div class="text-center">
                 <img src="{{asset('assets/imgs/theme/loading.gif')}}" alt="" />
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Vendor JS-->
 <script src="{{asset('assets/js/vendor/modernizr-3.6.0.min.js')}}"></script>
 <script src="{{asset('assets/js/vendor/jquery-3.6.0.min.js')}}"></script>

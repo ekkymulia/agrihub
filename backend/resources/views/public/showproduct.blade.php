@@ -169,7 +169,7 @@
                         <span style="color: #066F3B;" class="text-bold">Disupply Oleh:</span> <br>
                         <div class="d-flex gap-2 justify-content-between align-items-center">
                             <div class="d-flex flex-column">
-                                <a href="#" class="text-decoration-none" style="color: #066F3B;">Puncak Farm Bogor</a>
+                                <a href="#" class="text-decoration-none" style="color: #066F3B;">{{$data->vendor_alamat}}</a>
                                 <span>Bergabung sejak: Mei 2020</span>
                             </div>
                             <img src="{{asset('assets/puncak-farm.png')}}" class="rounded" width="70" alt="">
@@ -191,7 +191,7 @@
                         </div> -->
                         <span style="color: #066F3B;" class="text-bold">informasi Supplier:</span> <br>
                         <div class="d-flex gap-2 justify-content-between align-items-center">
-                            <span class="text-bold">Lokasi:</span> <span>Kota Bogor, Jawa Barat</span>
+                            <span class="text-bold">Lokasi:</span> <span>{{$data->vendor_alamat}}</span>
                         </div>
                         <div class="d-flex gap-2 justify-content-between align-items-center">
                             <span class="text-bold">Tipe Supplier:</span> <span>Supplier Besar</span>

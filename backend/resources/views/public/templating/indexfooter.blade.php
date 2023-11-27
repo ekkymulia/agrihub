@@ -1,5 +1,5 @@
 @php
-$response = Http::get(env('MONGO_API').'listProduct');
+$response = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/listProduct');
 $data = json_decode($response);
 
 $fruits = json_decode(Http::get("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/product_get_by_category?category=fruit"));
@@ -89,7 +89,7 @@ function formatRupiah($angka) {
                                 </div>
                                 <div class="product-content-wrap">
                                     <div class="product-category">
-                                        <a href="">Fruits</a>
+                                        <a href="">{{$row->kategori}}</a>
                                     </div>
                                     <h2><a href="{{route('show_product', ['id' => $row->_id])}}">{{$row->nama}}</a></h2>
                                     <div>

@@ -27,12 +27,13 @@ class IndexController extends Controller
     }
 
     public function chatbot(Request $request){
-        $chat = $request->input('send_chat');
-        $chatbot = Http::withHeaders([
-            'X-API-KEY' => 'LZoViQWwlK3H7ljxaal2a7g7FRNw3vW65qMHHI8k'
-        ])->get("https://eziuqoe7we.execute-api.ap-southeast-1.amazonaws.com/1/?recaiType=".urlencode($chat));
-        // dd($chatbot);
-        return view('public/chatbot');
+        $dataproduct = json_decode(Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/listProduct'));
+        // $chat = $request->input('send_chat');
+        // $chatbot = Http::withHeaders([
+        //     'X-API-KEY' => 'LZoViQWwlK3H7ljxaal2a7g7FRNw3vW65qMHHI8k'
+        // ])->get("https://eziuqoe7we.execute-api.ap-southeast-1.amazonaws.com/1/?recaiType=".urlencode($chat));
+        // // dd($chatbot);
+        return view('public/chatbot', compact('dataproduct'));
     }
 
     public function subscribe(){

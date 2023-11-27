@@ -3,6 +3,17 @@
 @section('title', 'Agrihub - Chat Bot AI')
 
 @section('content')
+    <style>
+        .preloader {
+            
+        }
+        .preloader-inner {
+
+        }
+        .position-relative{
+
+        }
+    </style>
     <main class="main pages">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
@@ -25,10 +36,12 @@
             </div>
         </div>
     </main>
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function () {
             var chatBox = $("#chat-box");
+            // var dataproduct = @json($dataproduct); // Convert PHP array to JSON
 
             function appendMessage(message, isUser) {
                 var messageClass = isUser ? "user" : "bot";
@@ -70,4 +83,22 @@
             });
         });
     </script>
+
+    <style>
+        /* Your existing styles */
+        .chat-box {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+        }
+
+        .chat-input {
+            margin-top: 10px;
+        }
+    </style>
 @endsection
