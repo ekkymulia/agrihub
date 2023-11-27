@@ -1,5 +1,5 @@
 @php
-$response = Http::get('https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/listProduct');
+$response = Http::get(env('MONGO_API').'listProduct');
 $data = json_decode($response);
 
 $fruits = json_decode(Http::get("https://ap-southeast-1.aws.data.mongodb-api.com/app/application-1-nzgdf/endpoint/product_get_by_category?category=fruit"));
@@ -74,7 +74,7 @@ function formatRupiah($angka) {
                             <div class="product-cart-wrap mb-30">
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
+                                        <a href="{{route('show_product', ['id' => $row->_id])}}">
                                             <img class="default-img" src="{{$row->url_gambar}}" alt="" />
                                             <img class="hover-img" src="{{$row->url_gambar}}" alt="" />
                                         </a>
@@ -89,9 +89,9 @@ function formatRupiah($angka) {
                                 </div>
                                 <div class="product-content-wrap">
                                     <div class="product-category">
-                                        <a href="shop-grid-left.html">Fruits</a>
+                                        <a href="">Fruits</a>
                                     </div>
-                                    <h2><a href="shop-product-right.html">{{$row->nama}}</a></h2>
+                                    <h2><a href="{{route('show_product', ['id' => $row->_id])}}">{{$row->nama}}</a></h2>
                                     <div>
                                         <span class="font-small text-muted">By <a href="{{route('vendor_details', ['id' => $row->vendor_id])}}">{{$row->vendor_nama}}</a></span>
                                     </div>
