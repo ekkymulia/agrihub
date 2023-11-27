@@ -57,7 +57,7 @@ class DashboardController extends Controller
 
     public function api_list_account(Request $request){
         $user_list = Http::get(env('MONGO_API').'user_list')->json();
-        return response()->json([$user_list]);
+        return response()->json($user_list);
     }
 
     public function add_account(){ 
