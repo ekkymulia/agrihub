@@ -12568,10 +12568,10 @@ input[type="text"] {
   position: fixed;
   top: 0;
   left: 100; /* Mengatur modal agar muncul di sebelah kanan */
-  width: 30%; /* Anda bisa menyesuaikan lebar modal sesuai kebutuhan */
+  width: 25%; /* Anda bisa menyesuaikan lebar modal sesuai kebutuhan */
   margin-top: 90px;
-  margin-left: 1500px;
-  margin-right: 100px;
+  margin-left: 70%;
+  margin-right: 0;
   z-index: 100;
 }
 
