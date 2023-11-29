@@ -3,17 +3,6 @@
 @section('title', 'Agrihub - Chat Bot AI')
 
 @section('content')
-    <style>
-        .preloader {
-            
-        }
-        .preloader-inner {
-
-        }
-        .position-relative{
-
-        }
-    </style>
     <main class="main pages">
         <div class="page-header breadcrumb-wrap">
             <div class="container">

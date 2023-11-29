@@ -70,10 +70,10 @@
                         <div class="mb-4">
                             <label class="form-label">Selected Tags <a href="">({{ucfirst($data->kategori)}})</a></label>
                             <select name="kategori" class="form-select" required>
-                                <option value="fruit">Fruit</option>
-                                <option value="vegetables">Vegetables</option>
-                                <option value="tubers">Tubers</option>
-                                <option value="spices">Spices</option>
+                                <option value="fruit" {{$data->kategori == 'fruit' ? 'selected' : ''}}>Fruit</option>
+                                <option value="vegetables" {{$data->kategori == 'vegetables' ? 'selected' : ''}}>Vegetables</option>
+                                <option value="tubers" {{$data->kategori == 'tubers' ? 'selected' : ''}}>Tubers</option>
+                                <option value="spices"> {{$data->kategori == 'spices' ? 'selected' : ''}}Spices</option>
                             </select>
                         </div>
                         <!-- Add your checkbox input for categories here -->

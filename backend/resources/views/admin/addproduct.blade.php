@@ -23,7 +23,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="form-label">Description</label>
-                            <textarea name="deskripsi" placeholder="Type here" class="form-control" rows="4" required></textarea>
+                            <textarea name="deskripsi" placeholder="Type here" class="form-control" rows="4" ></textarea>
                         </div>
                         <div class="mb-4">
                             <label class="form-label">Price</label>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="mb-4">
                             <label for="product_image" class="form-label">Image</label>
-                            <input type="file" name="gambar" class="form-control" id="product_image" accept="image/*" required/>
+                            <input type="file" name="gambar" class="form-control" id="product_image" accept="image/*" />
                         </div>
                         <div class="mb-4">
                             <label for="product_image" class="form-label">Certification Name</label>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="mb-4">
                             <label for="product_image" class="form-label">Certification</label>
-                            <input type="file" name="sertifikasi" class="form-control" id="product_image" accept="image/*" required/>
+                            <input type="file" name="sertifikasi" class="form-control" id="product_image" accept="image/*" />
                         </div>
                         <input type="text" name="vendor_id" placeholder="Type here" value="{{session('u_data')->_id}}" class="form-control" required hidden />
                         <input type="text" name="vendor_nama" placeholder="Type here" value="{{session('u_data')->nama_lengkap}}" class="form-control" required hidden />

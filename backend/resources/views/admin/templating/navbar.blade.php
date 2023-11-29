@@ -82,6 +82,12 @@
                             <!-- <a href="page-error-404.html">Error 404</a> -->
                         </div>
                     </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{route('setting_account')}}">
+                            <i class="icon material-icons md-settings"></i>
+                            <span class="text">Settings</span>
+                        </a>    
+                    </li>
                     @else
                     @php
                     $request->session()->invalidate(); 
@@ -98,7 +104,7 @@
                 <ul class="menu-aside"> 
                     <li class="menu-item">
                         <a class="menu-link" href="{{route('logout')}}">
-                            <i class="icon material-icons md-adjust"></i>
+                            <i class="icon material-icons md-exit_to_app"></i>
                             <span class="text"> Logout </span>
                         </a>
                     </li>

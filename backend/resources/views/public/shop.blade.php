@@ -99,7 +99,7 @@
                                     </div>
                                     <h2><a href="<?php echo route('show_product', ['id' => $row->_id]) ?>"><?php echo (empty($row->nama) ? '' : $row->nama); ?></a></h2>
                                     <div>
-                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">{{$row->vendor_nama}}</a></span>
+                                        <span class="font-small text-muted">By <a href="{{route('vendor_details', ['id' => $row->vendor_id])}}">{{$row->vendor_nama}}</a></span>
                                     </div>
                                     <div class="product-card-bottom">
                                         <div class="product-price">

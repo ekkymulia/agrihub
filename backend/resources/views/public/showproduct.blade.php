@@ -137,27 +137,27 @@
                                     </div>
                                     <div class="tab-pane fade" id="Vendor-info">
                                         <div class="vendor-logo d-flex mb-30">
+                                            @if (optional($data->moq ?? 'Tidak ada atau kosong'))
+                                            <a> Data moq tidak ditemukan </a>
+                                            @else
                                             <table class="table table-bordered table-sm table-responsive table-striped">
                                                 <tr>
                                                     <th class="fw-normal">No</th>
                                                     <th class="fw-normal">MOQ</th>
                                                     <th class="fw-normal">Harga</th>
                                                 </tr>
+                                                @php
+                                                $moqs = explode(',', $data->moq);
+                                                @endphp
+
+                                                @foreach ($moqs as $key => $moq)
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td> < 200 Kg</td>
-                                                    <td>Rp 5.000/Kg</td>
+                                                    <td>{{$key + 1}}</td>
+                                                    <td>{{ explode("=", $moq)[0] }}</td>
+                                                    <td>{{ explode("=", $moq)[1] }}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>201 Kg - 500 Kg</td>
-                                                    <td>Rp 4.500/Kg</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td> > 501 Kg</td>
-                                                    <td>Rp 3.500/Kg</td>
-                                                </tr>
+                                                @endforeach 
+                                                @endif
                                             </table>
                                         </div>
                                         
@@ -169,7 +169,7 @@
                         <span style="color: #066F3B;" class="text-bold">Disupply Oleh:</span> <br>
                         <div class="d-flex gap-2 justify-content-between align-items-center">
                             <div class="d-flex flex-column">
-                                <a href="#" class="text-decoration-none" style="color: #066F3B;">{{$data->vendor_alamat}}</a>
+                                <a href="#" class="text-decoration-none" style="color: #066F3B;">{{$data->vendor_nama}}</a>
                                 <span>Bergabung sejak: Mei 2020</span>
                             </div>
                             <img src="{{asset('assets/puncak-farm.png')}}" class="rounded" width="70" alt="">
@@ -179,10 +179,7 @@
                                 <a href="detail-katalog" class="text-decoration-none" style="color: #066F3B;">Produk ini berada di Katalog:</a>
                                 <span>Katalog Buah Manis</span>
                             </div>
-                            <div class="d-flex flex-column">
-                                <a href="detail-katalog.html" class="text-right" style="color: #066F3B; font-size: 0.75rem !important; text-align: right;">Lihat Katalog</a>
-                            <a href="data-katalog.html" class="" style="color: #066F3B; font-size: 0.75rem !important;">Lihat Semua Katalog</a>
-                            </div>
+
                         </div>
                         
                         <!-- <span style="color: #066F3B;" class="text-bold">informasi Katalog:</span>

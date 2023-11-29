@@ -83,16 +83,16 @@
                                 </div>
                                 <div class="product-content-wrap">
                                     <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2012</a>
+                                        <!-- <a href="shop-grid-right.html">Since 2012</a> -->
                                     </div>
-                                    <h2><a href="shop-product-full.html">{{$user->nama_lengkap}}</a></h2>
-                                    <div class="product-rate-cover">
+                                    <h2><a href="{{route('vendor_details', ['id' => $user->_id])}}">{{$user->nama_lengkap}}</a></h2>
+                                    <!-- <div class="product-rate-cover">
                                         <div class="product-rate d-inline-block">
                                             <div class="product-rating" style="width: 90%"></div>
                                         </div>
                                         <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
+                                    </div> -->
+                                    <div class="vendor-info mt-30 mb-30">
                                         <ul class="contact-infor text-muted">
                                             <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>{{$user->alamat}}</span></li>
                                             <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>

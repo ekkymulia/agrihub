@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="vendor-des mb-15">
-                                <p class="font-sm text-white">Ini adalah toko spesialis yang menawarkan berbagai produk strawberry dan pangan berkualitas tinggi.</p>
+                                <p class="font-sm text-white">{{$vendor->nama_lengkap}} is best vendor.</p>
                             </div>
                         </div>
                         <div class="col-lg-6">

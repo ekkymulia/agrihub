@@ -30,8 +30,8 @@
                 <img src="{{asset('assets/imgs/theme/loading.gif')}}" alt="" />
             </div>
         </div>
-    </div>
-</div> -->
+    </div> -->
+<!-- </div> -->
 <!-- Vendor JS-->
 <script src="{{asset('assets/js/vendor/modernizr-3.6.0.min.js')}}"></script>
 <script src="{{asset('assets/js/vendor/jquery-3.6.0.min.js')}}"></script>

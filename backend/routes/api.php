@@ -25,7 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('/auth')->group(function () {
     // Route::get('/login', [AuthController::class, 'index'])->name('api_login');
     Route::post('/login', [AccountController::class, 'authenticateViaApi'])->name('api_login');
-    Route::get('/logout', [AuthController::class, 'logoutViaApi'])->name('api_logout');
+    Route::get('/logout', [AccountController::class, 'logoutViaApi'])->name('api_logout');
 
     // Route::get('/register', [AuthController::class, 'index_register'])->name('register');
     // Route::post('/register', [AuthController::class, 'register'])->name('register');

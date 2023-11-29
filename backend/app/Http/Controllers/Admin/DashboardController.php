@@ -68,5 +68,9 @@ class DashboardController extends Controller
         $data = json_decode(Http::get(env('MONGO_API').'user_get?id='.urlencode($id)))[0];
         return view('admin/edit_account', compact('data'));
     }
+
+    public function setting_account(Request $request){
+        return view('admin/setting');
+    }
 }
 

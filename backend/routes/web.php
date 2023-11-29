@@ -55,6 +55,8 @@ Route::prefix('/admin')->group(function () {
     Route::get('/edit_account/{id}', [DashboardController::class, 'edit_account'])->name('edit_account');
     Route::post('/editaccount', [AccountAdminController::class, 'edit_account'])->name('editaccount');
     Route::get('/delete_account/{id}', [AccountAdminController::class, 'delete_account'])->name('delete_account');
+    
+    Route::get('/settings', [DashboardController::class, 'setting_account'])->name('setting_account');
 });
 
 Route::prefix('/')->group(function () {

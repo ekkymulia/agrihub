@@ -95,10 +95,10 @@
                     <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                     <nav>
                         <ul>
-                            <li class="hot-deals">
+                            <!-- <li class="hot-deals">
                                 <img src="{{ asset('assets/imgs/theme/icons/icon-hot.svg') }}" alt="hot deals" />
                                 <a href="{{ url('deals') }}">Deals</a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a class="{{ request()->is('/') ? 'active' : '' }}" href="{{ route('index') }}">Home</a>
                             </li>

@@ -40,6 +40,9 @@
                                                 <input type="text" required="" name="no_telp" placeholder="No. Telepon" />
                                             </div>
                                             <div class="form-group">
+                                                <input type="text" required="" name="koordinat" placeholder="No. Telepon" value="" hidden />
+                                            </div>
+                                            <div class="form-group">
                                                 <input required="" type="text" name="email" placeholder="Email" />
                                             </div>
                                             <div class="form-group">
