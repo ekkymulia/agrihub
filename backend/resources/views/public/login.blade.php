@@ -2,7 +2,7 @@
 @section('title', 'Agrihub - Login')
 @section('content')
 
-    w<main class="main pages">
+    <main class="main pages">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
@@ -17,21 +17,22 @@
                     <div class="col-xl-8 col-lg-10 col-md-12 m-auto">
                         <div class="row">
                             <div class="col-lg-6 pr-30 d-none d-lg-block">
-                                <img class="border-radius-15" src="assets/imgs/page/login-1.jpg" alt="" />
+                                <img class="border-radius-15" src="{{asset('assets/imgs/page/login-1.jpg')}}" alt="" />
                             </div>
                             <div class="col-lg-6 col-md-8">
                                 <div class="login_wrap widget-taber-content background-white">
                                     <div class="padding_eight_all bg-white">
                                         <div class="heading_s1">
                                             <h1 class="mb-5">Login</h1>
-                                            <p class="mb-30">Don't have an account? <a href="{{ url('register') }}">Create here</a></p>
+                                            <p class="mb-30">Don't have an account? <a href="{{ route('register') }}">Create here</a></p>
                                         </div>
-                                        <form method="post">
+                                        <form method="post" action="{{route('login')}}">
+                                            @csrf
                                             <div class="form-group">
-                                                <input type="text" required="" name="email" placeholder="   Username or Email *" />
+                                                <input type="text" required="" name="username" placeholder="Username" />
                                             </div>
                                             <div class="form-group">
-                                                <input required="" type="password" name="password" placeholder="Your password *" />
+                                                <input required="" type="password" name="password" placeholder="Your password" />
                                             </div>
                                             <div class="login_footer form-group mb-50">
                                                 <div class="chek-form">
@@ -40,7 +41,7 @@
                                                         <label class="form-check-label" for="exampleCheckbox1"><span>Remember me</span></label>
                                                     </div>
                                                 </div>
-                                                <u><a href="page-forgot-password.html" class="text-muted" href="#">Forgot password?</a></u>
+                                                <!-- <u><a href="page-forgot-password.html" class="text-muted" href="#">Forgot password?</a></u> -->
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-heading btn-block hover-up" name="login">Log in</button>

@@ -115,6 +115,10 @@ input[type=number]:focus,
           box-shadow: none;
 }
 
+#allcategories{
+  width: 20px;
+}
+
 input:focus::-moz-placeholder {
   opacity: 0;
   -webkit-transition: .4s;
@@ -252,6 +256,7 @@ input[type=number]:focus,
 
 .border-radius-15 {
   border-radius: 15px;
+  width: 6000px;
 }
 
 .border-radius-20 {
@@ -719,6 +724,10 @@ body {
   font-style: normal;
   font-weight: 400;
 }
+
+.card-body {
+  display: flex;
+  }
 
 h1,
 h2,
@@ -1291,7 +1300,7 @@ textarea:focus {
 
 .select2-container--default .select2-selection--single {
   background-color: #fff;
-  border-bottom: 3px solid #414648;
+  border-bottom: 3px solid #3bb77e;
   border-radius: 0;
   border-right: 0;
   height: 50px;
@@ -1435,6 +1444,7 @@ textarea:focus {
 
 .form-group {
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .form-group input {
@@ -2140,6 +2150,10 @@ input.qty-val {
   margin-left: 12px;
 }
 
+.card-akun {
+  
+}
+
 .carausel-8-columns-cover .product-img {
   border: 1px solid #cce7d0;
 }
@@ -2442,12 +2456,14 @@ input.qty-val {
   border-radius: .25rem;
 }
 
+
 .card .card-header {
   padding: 1rem;
   margin-bottom: 0;
   background-color: #f7f8f9;
   border-bottom: 1px solid #ececec;
 }
+
 
 .featured-card {
   padding: 50px 30px;
@@ -4180,13 +4196,14 @@ table .product-thumbnail img {
 }
 
 .product-cart-wrap .product-content-wrap .product-price span {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   color: #3BB77E;
 }
 
 .product-cart-wrap .product-content-wrap .product-price span.new-price {
   color: #3BB77E;
+
 }
 
 .product-cart-wrap .product-content-wrap .product-price span.old-price {
@@ -5159,7 +5176,7 @@ table .product-thumbnail img {
 }
 
 .detail-info .product-price .current-price {
-  font-size: 58px;
+  font-size: 30px;
   text-decoration: none;
   font-weight: 900;
 }
@@ -9237,7 +9254,7 @@ span.fi-rs-apps {
   margin: 0 0 15px 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+          
   transition: .3s;
   -moz-transition: .3s;
   -webkit-transition: .3s;
@@ -12391,6 +12408,20 @@ footer .hotline img {
     margin-bottom: 15px;
   }
 }
+.card1 {
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 0%;
+  height: a;
+}
 
 @media only screen and (min-width: 375px) and (max-width: 667px) {
   .deal .product-title {
@@ -12399,3 +12430,168 @@ footer .hotline img {
   }
 }
 /*# sourceMappingURL=main.css.map */
+/* Ruang di antara gambar */
+.carausel-3-columns img {
+  margin-right: 10px; /* Atur ruang horizontal */
+  margin-left: 10px;
+}
+
+/* Gaya tombol panah */
+.slick-prev, .slick-next {
+  background-color: #000; /* Ganti dengan warna latar belakang yang Anda inginkan */
+  color: #fff; /* Ganti dengan warna teks yang Anda inginkan */
+  border: none;
+  padding: 10px 15px;
+  margin: 0 10px; /* Atur ruang horizontal antara tombol */
+  cursor: pointer;
+}
+
+/* Gaya tombol panah saat dihover */
+.slick-prev:hover, .slick-next:hover {
+  background-color: #333; /* Ganti dengan warna latar belakang hover yang Anda inginkan */
+}
+
+
+.chat-container {
+  width: 75%;
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+.chat-header {
+  background-color: #3bb77e;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.chat-box {
+  padding: 20px;
+  max-height: 1500px;
+  overflow-y: auto;
+}
+
+.chat-message {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  clear: both;
+}
+
+.user {
+  background-color: #3bb77e;
+  color: #fff;
+  float: right;
+  font-size: 20px;
+}
+
+.bot {
+  background-color: #f4f4f4;
+  color: #333;
+  float: left;
+  font-size: 20px;
+}
+
+.chat-input {
+  padding: 10px;
+  background-color: #fff;
+}
+
+input[type="text"] {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+#send-button {
+  background-color: #3bb77e;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 8px;
+  cursor: pointer;
+}
+
+.card {
+  width: 1000px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  
+}
+
+.card img {
+  width: 1000px;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  
+}
+
+.card-content {
+  padding: 16px;
+  width: 1000px;
+  float: left;
+}
+
+.card-content h1 {
+  font-size: 30px;
+  margin-left: 50px;
+  float: left;
+}
+
+.card-content p {
+  font-size: 14px;
+  margin-left: 50px;
+  color: #555;
+  float: left;
+}
+
+.chat-bot {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  margin-bottom: 1%;
+  margin-right: 1%;
+  width: 5%;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 100; /* Mengatur modal agar muncul di sebelah kanan */
+  width: 30%; /* Anda bisa menyesuaikan lebar modal sesuai kebutuhan */
+  margin-top: 90px;
+  margin-left: 1500px;
+  margin-right: 100px;
+  z-index: 100;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%); /* Mengatur posisi modal agar di tengah vertikal */
+  right: 0; /* Mengatur modal agar muncul di sebelah kanan */
+  background-color: #fff;
+  padding: 300px;
+  text-align: center;
+  z-index: 80;
+}
+
+
+.chat-bot-img {
+  width: 100px; /* Sesuaikan ukuran gambar sesuai kebutuhan Anda */
+}
+
+
+
+
+

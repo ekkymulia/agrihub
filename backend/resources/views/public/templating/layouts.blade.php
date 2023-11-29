@@ -12,9 +12,9 @@
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/imgs/theme/favicon.svg')}}" />
     <!-- Template CSS -->
-    <link rel="stylesheet" href="assets/css/main.css?v=5.6" />
+    <link rel="stylesheet" href="{{asset('assets/css/main.css?v=5.6')}}" />
 </head>
 
 <body>
@@ -22,38 +22,39 @@
     @yield('content')
     @include('public.templating.footer')
     <!-- Preloader Start -->
-    <div id="preloader-active">
-    <div class="preloader d-flex align-items-center justify-content-center">
+    <!-- <div id="preloader-active"> -->
+    <!-- <div id=""> -->
+    <!-- <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-inner position-relative">
             <div class="text-center">
-                <img src="assets/imgs/theme/loading.gif" alt="" />
+                <img src="{{asset('assets/imgs/theme/loading.gif')}}" alt="" />
             </div>
         </div>
-    </div>
-</div>
+    </div> -->
+<!-- </div> -->
 <!-- Vendor JS-->
-<script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
-<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-<script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
-<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
-<script src="assets/js/plugins/slick.js"></script>
-<script src="assets/js/plugins/jquery.syotimer.min.js"></script>
-<script src="assets/js/plugins/wow.js"></script>
-<script src="assets/js/plugins/perfect-scrollbar.js"></script>
-<script src="assets/js/plugins/magnific-popup.js"></script>
-<script src="assets/js/plugins/select2.min.js"></script>
-<script src="assets/js/plugins/waypoints.js"></script>
-<script src="assets/js/plugins/counterup.js"></script>
-<script src="assets/js/plugins/jquery.countdown.min.js"></script>
-<script src="assets/js/plugins/images-loaded.js"></script>
-<script src="assets/js/plugins/isotope.js"></script>
-<script src="assets/js/plugins/scrollup.js"></script>
-<script src="assets/js/plugins/jquery.vticker-min.js"></script>
-<script src="assets/js/plugins/jquery.theia.sticky.js"></script>
-<script src="assets/js/plugins/jquery.elevatezoom.js"></script>
+<script src="{{asset('assets/js/vendor/modernizr-3.6.0.min.js')}}"></script>
+<script src="{{asset('assets/js/vendor/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('assets/js/vendor/jquery-migrate-3.3.0.min.js')}}"></script>
+<script src="{{asset('assets/js/vendor/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/slick.js')}}"></script>
+<script src="{{asset('assets/js/plugins/jquery.syotimer.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/wow.js')}}"></script>
+<script src="{{asset('assets/js/plugins/perfect-scrollbar.js')}}"></script>
+<script src="{{asset('assets/js/plugins/magnific-popup.js')}}"></script>
+<script src="{{asset('assets/js/plugins/select2.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/waypoints.js')}}"></script>
+<script src="{{asset('assets/js/plugins/counterup.js')}}"></script>
+<script src="{{asset('assets/js/plugins/jquery.countdown.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/images-loaded.js')}}"></script>
+<script src="{{asset('assets/js/plugins/isotope.js')}}"></script>
+<script src="{{asset('assets/js/plugins/scrollup.js')}}"></script>
+<script src="{{asset('assets/js/plugins/jquery.vticker-min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/jquery.theia.sticky.js')}}"></script>
+<script src="{{asset('assets/js/plugins/jquery.elevatezoom.js')}}"></script>
 <!-- Template  JS -->
-<script src="./assets/js/main.js?v=5.6"></script>
-<script src="./assets/js/shop.js?v=5.6"></script>
+<script src="{{asset('assets/js/main.js?v=5.6')}}"></script>
+<script src="{{asset('assets/js/shop.js?v=5.6')}}"></script>
 </body>
 
 </html>

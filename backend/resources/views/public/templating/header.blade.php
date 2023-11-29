@@ -6,7 +6,7 @@
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="{{ url('/') }}"><img src="{{ asset('/assets/imgs/theme/agrihub.svg')}}" alt="logo" /></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset('/assets/imgs/theme/agrihub.svg')}}" alt="logo" /></a>
                 </div>
                 <div class="header-right">
                     <div class="search-style-2">
@@ -29,99 +29,30 @@
                     </div>
                     <div class="header-action-right">
                         <div class="header-action-2">
-                            <div class="search-location">
-                                <form action="#">
-                                    <select class="select-active">
-                                        <option>Your Location</option>
-                                        <option>Alabama</option>
-                                        <option>Alaska</option>
-                                        <option>Arizona</option>
-                                        <option>Delaware</option>
-                                        <option>Florida</option>
-                                        <option>Georgia</option>
-                                        <option>Hawaii</option>
-                                        <option>Indiana</option>
-                                        <option>Maryland</option>
-                                        <option>Nevada</option>
-                                        <option>New Jersey</option>
-                                        <option>New Mexico</option>
-                                        <option>New York</option>
-                                    </select>
-                                </form>
-                            </div>
-                            <!-- <div class="header-action-icon-2">
-                                <a href="shop-compare.html">
-                                    <img class="svgInject" alt="Nest" src="assets/imgs/theme/icons/icon-compare.svg" />
-                                    <span class="pro-count blue">3</span>
-                                </a>
-                                <a href="shop-compare.html"><span class="lable ml-0">Compare</span></a>
-                            </div>
                             <div class="header-action-icon-2">
-                                <a href="shop-wishlist.html">
-                                    <img class="svgInject" alt="Nest" src="assets/imgs/theme/icons/icon-heart.svg" />
-                                    <span class="pro-count blue">6</span>
+                                @if(session('u_data'))
+                                <a href="{{ route('my-account') }}">
+                                    <img class="svgInject" alt="Nest" src="{{asset('assets/imgs/theme/icons/icon-user.svg')}}" />
                                 </a>
-                                <a href="shop-wishlist.html"><span class="lable">Wishlist</span></a>
-                            </div>
-                            <div class="header-action-icon-2">
-                                <a class="mini-cart-icon" href="shop-cart.html">
-                                    <img alt="Nest" src="assets/imgs/theme/icons/icon-cart.svg" />
-                                    <span class="pro-count blue">2</span>
-                                </a>
-                                <a href="shop-cart.html"><span class="lable">Cart</span></a>
-                                <div class="cart-dropdown-wrap cart-dropdown-hm2">
-                                    <ul>
-                                        <li>
-                                            <div class="shopping-cart-img">
-                                                <a href="shop-product-right.html"><img alt="Nest" src="assets/imgs/shop/thumbnail-3.jpg" /></a>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="shop-product-right.html">Daisy Casual Bag</a></h4>
-                                                <h4><span>1 × </span>$800.00</h4>
-                                            </div>
-                                            <div class="shopping-cart-delete">
-                                                <a href="#"><i class="fi-rs-cross-small"></i></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="shopping-cart-img">
-                                                <a href="shop-product-right.html"><img alt="Nest" src="assets/imgs/shop/thumbnail-2.jpg" /></a>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="shop-product-right.html">Corduroy Shirts</a></h4>
-                                                <h4><span>1 × </span>$3200.00</h4>
-                                            </div>
-                                            <div class="shopping-cart-delete">
-                                                <a href="#"><i class="fi-rs-cross-small"></i></a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="shopping-cart-footer">
-                                        <div class="shopping-cart-total">
-                                            <h4>Total <span>$4000.00</span></h4>
-                                        </div>
-                                        <div class="shopping-cart-button">
-                                            <a href="shop-cart.html" class="outline">View cart</a>
-                                            <a href="shop-checkout.html">Checkout</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <div class="header-action-icon-2">
-                                <a href="{{ url('/profile') }}">
-                                    <img class="svgInject" alt="Nest" src="assets/imgs/theme/icons/icon-user.svg" />
-                                </a>
-                                <a href="{{ url('/profile') }}"><span class="lable ml-0">Account</span></a>
+                                <a href="{{ route('my-account') }}"><span class="lable ml-1">{{session('u_data')->username}}</span></a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                     <ul>
-                                        <li><a href="page-account.html"><i class="fi fi-rs-user mr-10"></i>My Account</a></li>
-                                        <li><a href="page-account.html"><i class="fi fi-rs-location-alt mr-10"></i>Order Tracking</a></li>
-                                        <li><a href="page-account.html"><i class="fi fi-rs-label mr-10"></i>My Voucher</a></li>
-                                        <li><a href="shop-wishlist.html"><i class="fi fi-rs-heart mr-10"></i>My Wishlist</a></li>
-                                        <li><a href="page-account.html"><i class="fi fi-rs-settings-sliders mr-10"></i>Setting</a></li>
-                                        <li><a href="{{ url('/login') }}"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a></li>
+                                        <li><a href="{{route('my-account')}}"><i class="fi fi-rs-user mr-10"></i>My Account</a></li>
+                                        <li><a href="{{ route('logout') }}"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a></li>
                                     </ul>
                                 </div>
+                                @else
+                                <a href="{{ route('my-account') }}">
+                                    <img class="svgInject" alt="Nest" src="{{asset('assets/imgs/theme/icons/icon-user.svg')}}" />
+                                </a>
+                                <a href="{{ route('login') }}"><span class="lable ml-0">Belum Masuk?</span></a>
+                                <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
+                                    <ul>
+                                        <li><a href="{{route('login')}}"><i class="fi fi-rs-user mr-10"></i>Login</a></li>
+                                        <li><a href="{{route('register')}}"><i class="fi fi-rs-location-alt mr-10"></i>Register</a></li>
+                                    </ul>
+                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -133,7 +64,7 @@
         <div class="container">
             <div class="header-wrap header-space-between position-relative">
                 <div class="logo logo-width-1 d-block d-lg-none">
-                    <a href="{{ url('/') }}"><img src="{{ asset('/assets/imgs/theme/agrihub.svg')}}" alt="logo" /></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset('/assets/imgs/theme/agrihub.svg')}}" alt="logo" /></a>
                 </div>
                 <div class="header-nav d-none d-lg-flex">
                     <div class="main-categori-wrap d-none d-lg-block">
@@ -145,87 +76,50 @@
                             <div class="d-flex categori-dropdown-inner">
                                 <ul>
                                     <li>
-                                        <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-1.svg" alt="" />Milks and Dairies</a>
+                                        <a href="shop-grid-right.html"> <img src="{{asset('assets/imgs/theme/icons/category-1.svg')}}" alt="" />Fruits</a>
                                     </li>
                                     <li>
-                                        <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-2.svg" alt="" />Clothing & beauty</a>
+                                        <a href="shop-grid-right.html"> <img src="{{asset('assets/imgs/theme/icons/category-7.svg')}}" alt="" />Vegetable</a>
                                     </li>
                                     <li>
-                                        <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-3.svg" alt="" />Pet Foods & Toy</a>
+                                        <a href="shop-grid-right.html"> <img src="{{asset('assets/imgs/theme/icons/category-8.svg')}}" alt="" />Tubers</a>
                                     </li>
                                     <li>
-                                        <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-4.svg" alt="" />Baking material</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-5.svg" alt="" />Fresh Fruit</a>
+                                        <a href="shop-grid-right.html"> <img src="{{asset('assets/imgs/theme/icons/category-9.svg')}}" alt="" />Spices</a>
                                     </li>
                                 </ul>
-                                <ul class="end">
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-6.svg" alt="" />Wines & Drinks</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-7.svg" alt="" />Fresh Seafood</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-8.svg" alt="" />Fast food</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-9.svg" alt="" />Vegetables</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-10.svg" alt="" />Bread and Juice</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="more_slide_open" style="display: none">
-                                <div class="d-flex categori-dropdown-inner">
-                                    <ul>
-                                        <li>
-                                            <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/icon-1.svg" alt="" />Milks and Dairies</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/icon-2.svg" alt="" />Clothing & beauty</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="end">
-                                        <li>
-                                            <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/icon-3.svg" alt="" />Wines & Drinks</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/icon-4.svg" alt="" />Fresh Seafood</a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </div>
                             <div class="more_categories"><span class="icon"></span> <span class="heading-sm-1">Show more...</span></div>
                         </div>
                     </div>
                     <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
-                        <nav>
-                            <ul>
-                                <li class="hot-deals"><img src="assets/imgs/theme/icons/icon-hot.svg" alt="hot deals" /><a href="{{ url('deals') }}">Deals</a></li>
-                                <li>
-                                    <a class="active" href="{{ url('/') }}">Home</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('shop') }}">Shop</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('vendors') }}">Vendors</a>
-                                </li>
-                                </li>
-                                <li>
-                                    <a href="{{ url('chatbot') }}">Chat Bot AI</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('subscribe') }}">Subscribe</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('contact') }}">Contact</a>
-                                </li>
-                            </ul>
-                        </nav>
+                    <nav>
+                        <ul>
+                            <!-- <li class="hot-deals">
+                                <img src="{{ asset('assets/imgs/theme/icons/icon-hot.svg') }}" alt="hot deals" />
+                                <a href="{{ url('deals') }}">Deals</a>
+                            </li> -->
+                            <li>
+                                <a class="{{ request()->is('/') ? 'active' : '' }}" href="{{ route('index') }}">Home</a>
+                            </li>
+                            <li>
+                                <a class="{{ request()->is('shop') ? 'active' : '' }}" href="{{ route('shop') }}">Shop</a>
+                            </li>
+                            <li>
+                                <a class="{{ request()->is('vendors') ? 'active' : '' }}" href="{{ route('vendors') }}">Vendors</a>
+                            </li>
+                            <li>
+                                <a class="{{ request()->is('chatbot') ? 'active' : '' }}" href="{{ route('chatbot') }}">Chat Bot AI</a>
+                            </li>
+                            <li>
+                                <a class="{{ request()->is('subscribe') ? 'active' : '' }}" href="{{ route('subscribe') }}">Subscribe</a>
+                            </li>
+                            <li>
+                                <a class="{{ request()->is('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+
                     </div>
                 </div>
                 <!-- <div class="hotline d-none d-lg-flex">

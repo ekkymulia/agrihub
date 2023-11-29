@@ -23,9 +23,9 @@
             <div class="row flex-row-reverse">
                 <div class="col-lg-4-5">
                     <div class="shop-product-fillter">
-                        <div class="totall-product">
+                        <!-- <div class="totall-product">
                             <p>We found <strong class="text-brand">29</strong> vendors for you!</p>
-                        </div>
+                        </div> -->
                         <div class="sort-by-product-area">
                             <div class="sort-by-cover mr-10">
                                 <div class="sort-by-product-wrap">
@@ -68,498 +68,43 @@
                         </div>
                     </div>
                     <div class="row product-grid">
+                        <!-- start vendor -->
+                        @foreach ($users as $user)
+                        @if ($user->role_id == 2)
                         <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
                             <div class="product-cart-wrap mb-30">
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-1.html">
+                                        <a href="{{route('vendor_details', ['id' => $user->_id])}}">
                                             <img class="default-img" src="assets/imgs/vendor/vendor-1.png" alt="" />
                                         </a>
                                     </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div> -->
                                     
                                 </div>
                                 <div class="product-content-wrap">
                                     <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2012</a>
+                                        <!-- <a href="shop-grid-right.html">Since 2012</a> -->
                                     </div>
-                                    <h2><a href="shop-product-full.html">Puncak Pass Farm</a></h2>
-                                    <div class="product-rate-cover">
+                                    <h2><a href="{{route('vendor_details', ['id' => $user->_id])}}">{{$user->nama_lengkap}}</a></h2>
+                                    <!-- <div class="product-rate-cover">
                                         <div class="product-rate d-inline-block">
                                             <div class="product-rating" style="width: 90%"></div>
                                         </div>
                                         <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
-                                        <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Bogor</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
-                                        </ul>
-                                    </div>
-                                    <a href="vendor-details-1.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-2.html">
-                                            <img class="default-img" src="assets/imgs/vendor/vendor-2.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
                                     </div> -->
-                                    
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2012</a>
-                                    </div>
-                                    <h2><a href="shop-product-full.html">Alam Maju Garut</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
+                                    <div class="vendor-info mt-30 mb-30">
                                         <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Garut</span></li>
+                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>{{$user->alamat}}</span></li>
                                             <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
                                         </ul>
                                     </div>
-                                    <a href="vendor-details-3.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
+                                    <a href="{{route('vendor_details', ['id' => $user->_id])}}" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <!-- end card 2 -->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-2.html">
-                                            <img class="default-img" src="assets/imgs/vendor/vendor-7.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div> -->
-                                    
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2019</a>
-                                    </div>
-                                    <h2><a href="shop-product-full.html">Bumi Tani</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
-                                        <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Jawa Tengah</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
-                                        </ul>
-                                    </div>
-                                    <a href="vendor-details-3.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-2.html">
-                                            <img class="default-img" src="assets/imgs/vendor/vendor-8.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div> -->
-                                    
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2018</a>
-                                    </div>
-                                    <h2><a href="shop-product-full.html">Sinar Panen</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
-                                        <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Lampung</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
-                                        </ul>
-                                    </div>
-                                    <a href="vendor-details-3.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-2.html">
-                                            <img class="default-img" src="assets/imgs/vendor/vendor-3.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div> -->
-                                    
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2017</a>
-                                    </div>
-                                    <h2><a href="shop-product-full.html">Nusantara Sejahtera</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
-                                        <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Jakarta</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
-                                        </ul>
-                                    </div>
-                                    <a href="vendor-details-3.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-2.html">
-                                            <img class="default-img" src="assets/imgs/vendor/vendor-9.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div> -->
-                                    
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2019</a>
-                                    </div>
-                                    <h2><a href="shop-product-full.html">Sinar Jaya</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
-                                        <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Karawang</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
-                                        </ul>
-                                    </div>
-                                    <a href="vendor-details-3.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-2.html">
-                                            <img class="default-img" src="assets/imgs/vendor/vendor-4.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div> -->
-                                    
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2012</a>
-                                    </div>
-                                    <h2><a href="shop-product-full.html">Eko Makmur</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
-                                        <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Makkasar</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
-                                        </ul>
-                                    </div>
-                                    <a href="vendor-details-3.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-2.html">
-                                            <img class="default-img" src="assets/imgs/vendor/vendor-10.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div> -->
-                                    
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2012</a>
-                                    </div>
-                                    <h2><a href="shop-product-full.html">Sumber Tani</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
-                                        <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Yogyakarta</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
-                                        </ul>
-                                    </div>
-                                    <a href="vendor-details-3.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-2.html">
-                                            <img class="default-img" src="assets/imgs/vendor/vendor-5.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div> -->
-                                    
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2018</a>
-                                    </div>
-                                    <h2><a href="shop-product-full.html">Harvest Hub</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
-                                        <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Depok</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
-                                        </ul>
-                                    </div>
-                                    <a href="vendor-details-3.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-2.html">
-                                            <img class="default-img" src="assets/imgs/vendor/vendor-11.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div> -->
-                                    
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2020</a>
-                                    </div>
-                                    <h2><a href="shop-product-full.html">BioBloom</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
-                                        <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Sumedang</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
-                                        </ul>
-                                    </div>
-                                    <a href="vendor-details-3.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-2.html">
-                                            <img class="default-img" src="assets/imgs/vendor/vendor-6.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div> -->
-                                    
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2019</a>
-                                    </div>
-                                    <h2><a href="shop-product-full.html">Tera Crops</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
-                                        <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Semarang</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
-                                        </ul>
-                                    </div>
-                                    <a href="vendor-details-3.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-2.html">
-                                            <img class="default-img" src="assets/imgs/vendor/vendor-8.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div> -->
-                                    
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2018</a>
-                                    </div>
-                                    <h2><a href="shop-product-full.html">Sinar Panen</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
-                                        <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Lampung</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
-                                        </ul>
-                                    </div>
-                                    <a href="vendor-details-3.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-2.html">
-                                            <img class="default-img" src="assets/imgs/vendor/vendor-3.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div> -->
-                                    
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2017</a>
-                                    </div>
-                                    <h2><a href="shop-product-full.html">Nusantara Sejahtera</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
-                                        <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Jakarta</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
-                                        </ul>
-                                    </div>
-                                    <a href="vendor-details-3.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a href="vendor-details-2.html">
-                                            <img class="default-img" src="assets/imgs/vendor/vendor-9.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!-- <div class="product-action-1">
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div> -->
-                                    
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="shop-grid-right.html">Since 2019</a>
-                                    </div>
-                                    <h2><a href="shop-product-full.html">Sinar Jaya</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                    </div>
-                                    <div class="vendor-info mb-30">
-                                        <ul class="contact-infor text-muted">
-                                            <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Address: </strong> <span>Karawang</span></li>
-                                            <li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us: </strong><span>Subcribe to Unclock</span></li>
-                                        </ul>
-                                    </div>
-                                    <a href="vendor-details-3.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end product card-->
+                        @endif
+                        @endforeach
+                        <!-- end vendor -->
                     </div>
                     <!--product grid-->
                     <div class="pagination-area mt-20 mb-20">
@@ -568,11 +113,7 @@
                                 <li class="page-item">
                                     <a class="page-link" href="#"><i class="fi-rs-arrow-small-left"></i></a>
                                 </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link dot" href="#">...</a></li>
-                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
                                 <li class="page-item">
                                     <a class="page-link" href="#"><i class="fi-rs-arrow-small-right"></i></a>
                                 </li>

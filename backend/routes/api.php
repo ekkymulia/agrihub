@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Auth\AccountController;
+use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +21,19 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('/auth')->group(function () {
+    // Route::get('/login', [AuthController::class, 'index'])->name('api_login');
+    Route::post('/login', [AccountController::class, 'authenticateViaApi'])->name('api_login');
+    Route::get('/logout', [AccountController::class, 'logoutViaApi'])->name('api_logout');
+
+    // Route::get('/register', [AuthController::class, 'index_register'])->name('register');
+    // Route::post('/register', [AuthController::class, 'register'])->name('register');
+    // 
+    // Route::get('/register', [AuthController::class, 'index_register'])->name('api_register');
+    Route::post('/register', [AccountController::class, 'api_add_user'])->name('api_register');
+});
+
+Route::get('/list-product', [ProductController::class, 'api_product_list'])->name('api_product_list');
+Route::get('/showproduct/{id}', [ProductController::class, 'api_show_product'])->name('api_show_product');
+Route::get('/list-user', [DashboardController::class, 'api_list_account'])->name('api_list_account');
