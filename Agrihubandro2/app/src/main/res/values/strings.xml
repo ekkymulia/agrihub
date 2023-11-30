@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Agrihubandro</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="searchbar_hint">Cari Produk Agri</string>
+    <string name="username">Em</string>
+    <string name="searchnotfound">Produk tidak ditemukan</string>
+    <string name="searchask">Masukkan nama produk yang ingin dicari</string>
+    <string name="filter">Filter\n</string>
+    <string name="splash_text">Connecting farmers in Indonesia \n to the world wide web</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+</resources>

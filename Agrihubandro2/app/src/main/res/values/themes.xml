@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Agrihubandro" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#FFFFFF</item>
+        <item name="colorOnPrimary">#3BB77E</item> <!-- Text color on the primary color -->
+
+        <!-- Other theme attributes -->
+        <item name="android:colorBackground">#E9E9E9</item>
+        <item name="android:textColor">#868782</item>
+        <item name="android:windowBackground">#F7F7F6</item>
+
+    </style>
+
+    <style name="Theme.Agrihubandro" parent="Base.Theme.Agrihubandro" />
+
+
+
+</resources>

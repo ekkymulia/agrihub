@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:orientation="vertical"
+    android:backgroundTint="@color/softgrey"
+    tools:context=".ProductDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/backbutton"
+                android:onClick="redirectMain"
+                android:layout_marginTop="4dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/baseline_arrow_back_24"/>
+
+            <!-- Non-scrollable content above the scrollable content -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/pd_title"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:paddingTop="20dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="12dp"
+                android:textColor="@color/black"
+                android:text="Nama Produk" />
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/pd_kategori"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kategori Produk"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="12dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <!-- Other non-scrollable TextViews -->
+
+        <!-- Scrollable content wrapped in a NestedScrollView -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- TextView for "Deskripsi Produk" -->
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/roundedcard"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Foto Produk"
+                        android:textSize="16sp" />
+
+                    <!-- RecyclerView for Image Slider -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/imgslider"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="60dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager" />
+                </RelativeLayout>
+
+                <!-- Other scrollable content with LinearLayouts and TextViews -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/roundedcard"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Seputar Produk"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/pd_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus odio eu dapibus malesuada. Ut ultricies, velit a hendrerit lacinia, velit magna fermentum tellus, eu placerat eros justo at sem. Sed eget sem quis ligula feugiat lobortis. Nullam auctor nisl eget urna mollis, ac rhoncus nulla fringilla. Sed nec turpis in mi sagittis viverra. Curabitur convallis velit vel commodo aliquet. Sed convallis risus vitae enim congue, a posuere libero tempor. Phasellus nec metus nec tortor mollis lobortis eget non metus. Sed id ex vel odio rhoncus tristique a id est. Suspendisse potenti. Aenean interdum tortor ac nunc blandit, ac cursus elit facilisis. Donec eu purus tincidunt, hendrerit libero nec, cursus orci."
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="#c0c0c0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="MOQ Produk"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/pd_moq"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="200 pcs = 26000."
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="#c0c0c0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="Sertifikasi Produk"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/pd_sertifikasi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="Sed faucibus odio eu dapibus malesuada."
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="#c0c0c0" />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/roundedcard"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Informasi Supplier"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/pd_vendorname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="21dp"
+                        android:text="Bogor Farm - Tanah Sereal"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <!-- RecyclerView for Image Slider -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/imgslider2"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="60dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/roundedcard"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Seputar Vendor"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/pd_vendordesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus odio eu dapibus malesuada. Ut ultricies, velit a hendrerit lacinia, velit magna fermentum tellus, eu placerat eros justo at sem. Sed eget sem quis ligula feugiat lobortis. Nullam auctor nisl eget urna mollis, ac rhoncus nulla fringilla. Sed nec turpis in mi sagittis viverra. Curabitur convallis velit vel commodo aliquet. Sed convallis risus vitae enim congue, a posuere libero tempor. Phasellus nec metus nec tortor mollis lobortis eget non metus. Sed id ex vel odio rhoncus tristique a id est. Suspendisse potenti. Aenean interdum tortor ac nunc blandit, ac cursus elit facilisis. Donec eu purus tincidunt, hendrerit libero nec, cursus orci."
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="#c0c0c0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="MOQ dan Harga"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/pd_vendor_moq"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus odio eu dapibus malesuada."
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="#c0c0c0" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="Kapasitas Produksi"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/pd_vendorkaps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="Sed faucibus odio eu dapibus malesuada."
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="#c0c0c0" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="Kapasitas Produksi"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/pd_vendor_panen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="Sed faucibus odio eu dapibus malesuada."
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="#c0c0c0" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</LinearLayout>
